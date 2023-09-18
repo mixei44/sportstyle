@@ -1,11 +1,26 @@
 # from django import forms
-# from django.contrib import admin
-# from ckeditor_uploader.widgets import CKEditorUploadingWidget
-# from ckeditor.widgets import CKEditorWidget
+from django.contrib import admin
+from ckeditor_uploader.widgets import CKEditorUploadingWidget
+from ckeditor.widgets import CKEditorWidget
 
-# from .models import CourseCategoriesModel, CourseModel, CourseCommentModel
+from .models import ShoesModel, ShoesPhotoModel, JacketModel, JacketPhotoModel
 
-# # Register your models here.
+# Register your models here.
+
+class ShoesModelAdmin(admin.ModelAdmin):
+    pass
+
+
+class ShoesPhotoModelAdmin(admin.ModelAdmin):
+    pass
+
+
+class JacketModelAdmin(admin.ModelAdmin):
+    pass
+
+
+class JacketPhotoModelAdmin(admin.ModelAdmin):
+    pass
 
 
 # class CourseCategoriesAdmin(admin.ModelAdmin):
@@ -47,6 +62,7 @@
 #     form = CourseCommentsAdminForm
 
 
-# admin.site.register(CourseCategoriesModel, CourseCategoriesAdmin)
-# admin.site.register(CourseModel, CourseAdmin)
-# admin.site.register(CourseCommentModel, CourseCommentsAdmin)
+admin.site.register(ShoesModel, ShoesModelAdmin)
+admin.site.register(ShoesPhotoModel, ShoesPhotoModelAdmin)
+admin.site.register(JacketModel, JacketModelAdmin)
+admin.site.register(JacketPhotoModel, JacketPhotoModelAdmin)
