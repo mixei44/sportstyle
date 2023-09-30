@@ -47,7 +47,7 @@ class ShoesModel(models.Model):
     season = models.CharField('Сезон', max_length=1, choices=SEASON)
     
     guarantee_period = models.PositiveIntegerField('Срок гарантии')
-    product_authenticity_guarantee = models.BooleanField('Гарантия подлинности товара', max_length=64)
+    product_authenticity_guarantee = models.BooleanField('Гарантия подлинности товара')
     category =  models.CharField('Категория', max_length=64)
 
     upper_material = models.CharField('Материал верха', max_length=64)
@@ -55,7 +55,7 @@ class ShoesModel(models.Model):
     outsole_material = models.CharField('Материал подошвы', max_length=64)
     insole_material = models.CharField('Материал стельки', max_length=64)
     
-    brand = models.ForeignKey(BrandModel, on_delete=models.CASCADE, verbose_name="Бренд", related_name='brand')
+    brand = models.ManyToManyField(BrandModel, verbose_name="Бренд", related_name='brand_shoes')
 
 
 class ShoesPhotoModel(models.Model):
@@ -71,7 +71,7 @@ class JacketModel(models.Model):
 
     cut = models.CharField('Зауженный',max_length=64) 
     possibility_of_packaging = models.CharField('Возможность упаковки', max_length=64)
-    length = models.BooleanField('Длина',mmax_length=64)    
+    length = models.BooleanField('Длина')    
     
     ergonomic_cut = models.CharField('Эргономичный крой', max_length=64)
     hood = models.CharField('Капюшон', max_length=64)
@@ -94,8 +94,8 @@ class JacketModel(models.Model):
     season = models.CharField('Сезон', max_length=1, choices=SEASON) 
     
 #Общие характеристики
-    guarantee_period = models.PositiveIntegerField('Срок гарантии', max_length=64)
-    product_authenticity_guarantee = models.BooleanField('Гарантия подлинности товара', max_length=64)
+    guarantee_period = models.PositiveIntegerField('Срок гарантии')
+    product_authenticity_guarantee = models.BooleanField('Гарантия подлинности товара')
     category =  models.CharField('Категория', max_length=64)
     
 #СОСТАВ 
@@ -103,7 +103,7 @@ class JacketModel(models.Model):
     lining_material = models.CharField('Материал утеплителя', max_length=64)
     insole_material = models.CharField('Материал стельки', max_length=64)
     reflective_details = models.CharField('Светоотражающие детали', max_length=64)
-    brand = models.ForeignKey(BrandModel, on_delete=models.CASCADE, verbose_name="Бренд", related_name='brand')
+    brand = models.ManyToManyField(BrandModel, verbose_name="Бренд", related_name='brand_jacket')
     
 #Уход за товаром
     care_instructions = models.CharField('Рекомендации по уходу', max_length=64)
@@ -134,9 +134,8 @@ class TrousersModel(models.Model):
     water_repellent_impregnation = models.BooleanField('Наличие мембраны')
 
     gender = models.CharField('Пол', max_length=1, choices=GENDER)
-    kind_of_sport = models.CharField('Вид спорта', max_length=64)
     sport_type = models.CharField('Вид спорта', max_length=1, choices=SPORT_TYPE)
-    product_authenticity_guarantee = models.BooleanField('Гарантия подлинности товара', max_length=64)
+    product_authenticity_guarantee = models.BooleanField('Гарантия подлинности товара')
     category =  models.CharField('Категория', max_length=64)
 
     upper_material = models.CharField('Материал верха', max_length=64)
@@ -166,12 +165,14 @@ class ThermalUnderwearModel(models.Model):
     flat_seams = models.BooleanField('Плоские швы')
 
     gender = models.CharField('Пол', max_length=1, choices=GENDER)
-    kind_of_sport = models.CharField('Вид спорта', max_length=64)
     sport_type = models.CharField('Вид спорта', max_length=1, choices=SPORT_TYPE)
-    product_authenticity_guarantee = models.BooleanField('Гарантия подлинности товара', max_length=64)
+    product_authenticity_guarantee = models.BooleanField('Гарантия подлинности товара')
     category =  models.CharField('Категория', max_length=64)
 
     materials = models.CharField('Застежка', max_length=64)
+
+    brand = models.ManyToManyField(BrandModel, verbose_name="Бренд", related_name='brand_thermalunderwear')
+
 
     care_instructions = models.CharField('Рекомендации по уходу', max_length=64)
 
@@ -199,63 +200,19 @@ class JumperModel(models.Model):
     material = models.CharField('Материал', max_length=64)
 
     gender = models.CharField('Пол', max_length=1, choices=GENDER)
-    kind_of_sport = models.CharField('Вид спорта', max_length=64)
     sport_type = models.CharField('Вид спорта', max_length=1, choices=SPORT_TYPE)
-    product_authenticity_guarantee = models.BooleanField('Гарантия подлинности товара', max_length=64)
+    product_authenticity_guarantee = models.BooleanField('Гарантия подлинности товара')
     category =  models.CharField('Категория', max_length=64)
 
     upper_material = models.CharField('Материал верха', max_length=64)
+
+    brand = models.ManyToManyField(BrandModel, verbose_name="Бренд", related_name='brand_jumper')
 
     care_instructions = models.CharField('Рекомендации по уходу', max_length=64)
 
 class JumperPhotoModel(models.Model):
     photo = models.ImageField('Фото', upload_to='jumper/')
     jumper = models.ForeignKey(JumperModel, on_delete=models.CASCADE, verbose_name="К Джемперу", related_name='photos')
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
