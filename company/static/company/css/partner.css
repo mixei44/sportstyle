@@ -1,0 +1,84 @@
+:root {
+    --white: #ffffff
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+main.container {
+    max-width: 100%;
+    padding: 0;
+}
+/* наши партнеры */
+.partner__title {
+    height: 650px;
+    background-image: url('../images/partner/partner-title.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+/* тоже текст  */
+.partner__title-header {
+    font-style: italic;
+    font-weight: 1000;
+    font-size: 80px;
+    line-height: 92px;
+    letter-spacing: 11px;
+    text-transform: uppercase;
+    color: var(--white);
+}
+/* текст */
+.partner__tittle-wrapper {
+    padding-top: 183px;
+    padding-left: 180px;
+
+}
+/* URBAN VIBES */
+.partner__section {
+    margin-bottom: 40px;
+    display: grid;
+    grid-template-rows: repeat(1, 1fr);
+    grid-template-columns: repeat(7, 1fr);
+    align-items: center;
+}
+/* Демикс  */
+.partner__photo-left {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    grid-column: 1 / 6;
+    grid-row: 1 / 2;
+}
+
+.partner__manifest-right {
+    grid-column: 4 / 8;
+    grid-row: 1 / 2;
+    position: relative;
+    background-color: var(--white);
+    padding: 39px 58px;
+}
+
+.partner__photo-right {
+    width: 100%;
+    overflow: hidden;
+    grid-column: 3 / -1;
+    grid-row: 1 / 2;
+}
+/* Колумбиия  */
+.partner__manifest-left {
+    grid-column: 1 / 5;
+    grid-row: 1 / 2;
+    position: relative;
+    background-color: var(--white);
+    padding: 61.5px 58px;
+}
+
+.partner__subtitle{
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 24px;
+    color: #FFFFFF;
+    margin: 0;
+}

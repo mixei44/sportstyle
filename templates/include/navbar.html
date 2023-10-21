@@ -1,5 +1,57 @@
-<!-- подвал сайта  -->
-{% load static %}
-<header class="">
-    <nav class=""></nav>
-</header>
+<!-- Шабка  сайта  сайта  -->
+<header>
+
+    <!-- 
+    
+<span> SportStyle44@mail.ru <p>
+    +7 999 123-45-67</p></span>
+
+         -->
+
+         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid container">
+              <a class="navbar-brand" href="/">SportStyle</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+                <div class="nav">
+                <ul class="navbar-nav">
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Женщинам
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-dark">
+                      <li><a class="dropdown-item" href="{% url 'jacket' %}">Куртки</a></li>
+                      <li><a class="dropdown-item" href="{% url 'obuv' %}">Кроссовки</a></li>
+                      <li><a class="dropdown-item" href="{% url 'termobele' %}">Термобелье</a></li>
+                      <li><a class="dropdown-item" href="{% url 'dzhemper' %}">Джемпер</a></li>
+                    </ul>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Мужчинам
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-dark">
+                      <li><a class="dropdown-item" href="{% url 'jacket' %}">Куртки</a></li>
+                      <li><a class="dropdown-item" href="{% url 'obuv' %}">Кроссовки</a></li>
+                      <li><a class="dropdown-item" href="{% url 'termobele' %}">Термобелье</a></li>
+                      <li><a class="dropdown-item" href="{% url 'dzhemper' %}">Джемпер</a></li>
+                    </ul>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Детям
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark">
+                          <li><a class="dropdown-item" href="{% url 'jacket' %}">Куртки</a></li>
+                          <li><a class="dropdown-item" href="{% url 'obuv' %}">Кроссовки</a></li>
+                          <li><a class="dropdown-item" href="{% url 'termobele' %}">Термобелье</a></li>
+                          <li><a class="dropdown-item" href="{% url 'dzhemper' %}">Джемпер</a></li>
+                          </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+
+ </header>

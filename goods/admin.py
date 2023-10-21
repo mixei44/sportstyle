@@ -3,12 +3,40 @@ from django.contrib import admin
 from ckeditor_uploader.widgets import CKEditorUploadingWidget
 from ckeditor.widgets import CKEditorWidget
 
-from .models import ShoesModel, ShoesPhotoModel, JacketModel, JacketPhotoModel
+from .models import ShoesModel, ShoesPhotoModel, JacketModel, JacketPhotoModel, Technology, BrandModel
 
 # Register your models here.
 
-class ShoesModelAdmin(admin.ModelAdmin):
+class TechnologyModelAdmin(admin.ModelAdmin):
     pass
+
+
+class BrandModelAdmin(admin.ModelAdmin):
+    pass
+
+
+class ShoesModelAdmin(admin.ModelAdmin):
+    filter_horizontal = ('technologies', )
+    fieldsets = (
+        ('Фильтер', {
+            'fields': ('title', 'price', 'description')
+        }),
+        ('Конструктивные особенности', {
+            'fields': ('insulation_weight', 'clasp', 'reinforced_bumper')
+        }),
+        ('Функциональные особенности', {
+            'fields': ('antibacterial_impregnation', 'moisture_protection')
+        }),
+        ('Общие характеристики', {
+            'fields': ('gender', 'age_type', 'sport_type', 'season', 'guarantee_period', 'product_authenticity_guarantee')
+        }),
+        ('Состав', {
+            'fields': ('upper_material', 'lining_material', 'outsole_material', 'insole_material')
+        }),
+        ('Дополнительные характеристики', {
+            'fields': ('brand', 'technologies')
+        }),
+    )
 
 
 class ShoesPhotoModelAdmin(admin.ModelAdmin):
@@ -16,11 +44,52 @@ class ShoesPhotoModelAdmin(admin.ModelAdmin):
 
 
 class JacketModelAdmin(admin.ModelAdmin):
-    pass
-
+    filter_horizontal = ('technologies', )
+    fieldsets = (
+        ('Фильтер', {
+            'fields': ('title', 'price', 'description')
+        }),
+        ('Конструктивные особенности', {
+            'fields': ('cut', 'possibility_of_packaging', 'length','ergonomic_cut','hood','сlasp','taped_seams','number_of_pockets','thumb_hole_in_cuff','cuff_adjustment','fur')
+        }),
+        ('Функциональные особенности', {
+            'fields': ('presence_of_membrane', 'water_repellent_impregnation', 'waterproof_zippers', 'wind_protection','insulation')
+        }),
+        ('Общие характеристики', {
+            'fields': ('gender', 'age_type', 'sport_type', 'season', 'guarantee_period', 'product_authenticity_guarantee')
+        }),
+        ('Состав', {
+            'fields': ('upper_material', 'lining_material','insole_material')
+        }),
+        ('Дополнительные характеристики', {
+            'fields': ('brand', 'technologies','reflective_details')
+        }),
+        ('Уход за товаром', {
+            'fields': ('care_instructions', 'additional_information')
+        }),
+        
+    )
 
 class JacketPhotoModelAdmin(admin.ModelAdmin):
     pass
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 # class CourseCategoriesAdmin(admin.ModelAdmin):
@@ -61,8 +130,12 @@ class JacketPhotoModelAdmin(admin.ModelAdmin):
 #     search_fields = ("text", "course")
 #     form = CourseCommentsAdminForm
 
+admin.site.register(Technology, TechnologyModelAdmin)
+admin.site.register(BrandModel, BrandModelAdmin)
 
 admin.site.register(ShoesModel, ShoesModelAdmin)
 admin.site.register(ShoesPhotoModel, ShoesPhotoModelAdmin)
+
 admin.site.register(JacketModel, JacketModelAdmin)
 admin.site.register(JacketPhotoModel, JacketPhotoModelAdmin)
+

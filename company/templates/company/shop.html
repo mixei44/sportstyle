@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block link %}
+    <link rel="stylesheet" href="{% static '/company/css/shop.css' %}">
+{% endblock %}
+
+{% block title %}Магазин{% endblock %}
+{% block content %}
+
+
+<div class="sm__title shop__tetle">
+    <div class="content__tetle">
+        <h1 data-text-id="line-tetle"  class="sm__text__h1 sm__text__medium"> Магазин в г. Кострома</h1>
+
+    </div>
+</div>
+
+<div data-selenium="shop-types" class="sm-shops-types-list shops-page__shops-types">
+    <div class="sm-shop-type sm-shops-types-list__item">
+         <div class="sm-shop-type__info">
+
+            <div class="sm-shop-type__title">Супермаркет</p></div>Товары для спорта и активного</br> отдыха для всей семьи</div>
+        <div class="sm-shop-type__info">
+            <div class="sm-shop-type__title">Гипермаркет<p></p></div>Товары для спорта и активного</br> отдыха для всей семьи. Магазины с </br>максимальной площадью</div>
+        <div class="sm-shop-type__info">
+            <div class="sm-shop-type__title">PRO</p></div>Расширенный ассортимент </br>товаров и брендов для спорта.</br> PRO-эксперты. PRO-сервисы</div>
+        <div class="sm-shop-type__info">
+            <div class="sm-shop-type__title">Дисконт</p></div>Товары известных брендов для</br> спорта и активного отдыха со </br>скидками</div>
+            </div>
+        </div>
+
+
+        <div class="photo">
+            <img src="../../static/company/images/shop/shop.png" width="1000" height="500" alt="фото магазина" style="object-fit: cover;">
+        </div>
+
+
+
+{% endblock %}
+
+

@@ -1,0 +1,182 @@
+:root {
+    --white: #ffffff
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+/* о нас */
+.about__title__header{
+    text-align: center;
+    font-size: 20px;
+    color: #333;
+
+}
+/* С чего наченалось  */
+.about__container{
+    
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    align-items: center;
+}
+.about__title h2{
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 1.33;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #000;
+    margin-bottom: 17px;
+}
+
+.about__title p{
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: normal;
+    color: #333;
+    max-width: 560px;
+
+}
+.about__title{
+    max-width: 70%;
+}
+
+/* Наша мисия  */
+.mt-5 {
+    margin-top: 9rem!important;
+}
+
+.about__container_2{
+    width: 74.8%;
+
+}
+
+.about__container__1{
+    position: relative;
+    display: flex;
+    -webkit-box-pack: end;
+    justify-content: flex-end;
+
+}
+
+.about__block{
+    position: absolute;
+    top: -64px;
+    left: 0;
+    padding: 4%;
+    width: 59.4%;
+    color: #fff;
+    background-color: #1551e5;
+}
+
+.about__block__h2{
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 1.33;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.about__block__f{
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    margin-top: 32px;
+}
+
+.about__block__f span{
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: normal;
+    color: #fff;
+
+}
+
+/* Наши проекты  */
+.about__head{
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    margin-bottom: 29px;
+}
+
+.about__container_3{
+    display: flex;
+    flex-wrap: nowrap;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+}
+
+.about__link__over{
+
+    color: #fff;
+    font-size: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    transition: 0.3s;
+
+}
+
+.about__link{
+    width: 32.6%;
+    position: relative;
+    overflow: hidden;
+}
+
+/* все бренды */
+.about__container_4{
+    margin-bottom: 30px;
+    position: relative;
+    width: 74%;
+    vertical-align: middle;
+}
+
+.about__block__1{
+    position: absolute;
+    top: -64px;
+    right: 0;
+    width: 90%;
+    background-color: #1551e5;
+    color: #fff;
+}
+
+
+.about__block__linck{
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;;
+    flex-wrap: wrap;
+}
+
+.m-t-b{
+    margin: 24px 0;
+}
+
+ /* margin-bottom: 40px;  отступ будет стоят где наши бренды */
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* все бренды  */

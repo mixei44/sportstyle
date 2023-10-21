@@ -1,5 +1,29 @@
-<!-- шапка сайта  -->
+<!-- Подвал сайта  сайта  -->
 {% load static %}
+
 <footer>
+    <nav class="footer__nav">
+        <div class="container d-flex justify-content-between">
+            <section>
+                <ul class="footer__list">
+                    <li><a href="{% url 'about' %}"> <p>О нас </p></a></li>
+                </ul>
+            </section>
+
+            <section>
+                <ul class="footer__list">
+                    <li><a href="{% url 'shop' %}"> Магазины </p></a></li>
+                    
+                </ul>
+            </section>
+
+            <section>
+            
+                <ul class="footer__list">
+                    <li><a href="{% url 'partner' %}"> Наши партнеры </p></a></li>
+            </section>       
+        </div>
+    </nav>
     
+
 </footer>

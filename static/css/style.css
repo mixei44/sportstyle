@@ -1,1 +1,47 @@
-/* на весь сайт пишеться стили  */
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.page-body {
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    align-content: start;
+}
+
+.container {
+    max-width: 1300px;
+}
+
+.nav{
+    margin-left: 225px;
+}
+
+.footer__nav {
+    padding-left: 600px;
+    padding-right: 600px;
+    background-color:#1F2833;
+    font-size: 20px;
+}
+
+.footer__list > li > a{
+    text-decoration: none;
+    color: #66FCF1;
+}
+
+
+/* Хиты продаш */
+.sm__text{
+    display: inline-flex;
+    align-items: center;
+}
+
+.sm__block__title{
+    margin-bottom: 28px
+}
+
+.sm__text__h2{
+    font-size: 30px;
+    line-height: 40px;
+    letter-spacing: 4px;
+}

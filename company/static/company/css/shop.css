@@ -1,0 +1,79 @@
+:root {
+    --white: #ffffff
+}
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.sm__title{
+    display: flex;
+    align-items: center;
+}
+/* растояния межлу шапкой  */
+.shop__tetle{
+    white-space: nowrap;
+    margin-top: 33px;
+    overflow-x: auto;
+}
+
+.content__tetle{
+    flex: 1 1 auto;
+}
+/*  */
+.sm__text__h1{
+    font-size: 48px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}
+/* Загаловок */
+.sm__text__medium{
+    font-stretch: normal;
+    font-weight: 500;
+}
+.shops-page__shops-types {
+    margin: 48px 0;
+}
+.sm-shops-types-list {
+    display: flex;
+    column-gap: 18px;
+}
+/*  */
+.sm-shops-types-list__item {
+    flex: 1;
+}
+
+.sm-shop-type {
+    padding: 21px 0 17px;
+}
+
+.sm-shop-type {
+    display: flex;
+}
+
+.sm-shop-type__info {
+    margin-left: 20px;
+    flex: 1;
+}
+
+
+.sm-shop-type__title {
+    font-size: 20px;
+    line-height: 28px;
+    font-stretch: normal;
+    letter-spacing: normal;
+    font-weight: 500;
+}
+
+
+.sm-shop-type__text {
+    font-size: 14px;
+    line-height: 20px;
+    font-stretch: normal;
+    letter-spacing: normal;
+    font-weight: 400;
+}
+
+
+.photo{
+    margin-bottom: 30px;
+}
