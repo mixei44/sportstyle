@@ -21,55 +21,28 @@
                     <!-- карусель фото  -->
                     <div class="d-flex">
 
-                        <div class="all">
-                            <div class="slideshow-container">
-
-                                <div class="mySlides fade">
-                                  <div class="numbertext">1 / 3</div>
-                                  <img src="img_nature_wide.jpg" style="width:100%">
-                                </div>
-
-                                
-                                <a class="prev" onclick="plusSlides(-1)">❮</a>
-                                <a class="next" onclick="plusSlides(1)">❯</a>
-                                
-                                </div>
-                                <br>
-                                
-                                <script>
-                                var slideIndex = 1;
-                                showSlides(slideIndex);
-                                
-                                function plusSlides(n) {
-                                  showSlides(slideIndex += n);
-                                }
-                                
-                                function currentSlide(n) {
-                                  showSlides(slideIndex = n);
-                                }
-                                
-                                function showSlides(n) {
-                                  var i;
-                                  var slides = document.getElementsByClassName("mySlides");
-                                  var dots = document.getElementsByClassName("dot");
-                                  if (n > slides.length) {slideIndex = 1}    
-                                  if (n < 1) {slideIndex = slides.length}
-                                  for (i = 0; i < slides.length; i++) {
-                                      slides[i].style.display = "none";  
-                                  }
-                                  for (i = 0; i < dots.length; i++) {
-                                      dots[i].className = dots[i].className.replace(" active", "");
-                                  }
-                                  slides[slideIndex-1].style.display = "block";  
-                                  dots[slideIndex-1].className += " active";
-                                }
-                                </script>
-                        {% if product.photos.all %}
-                            {% for photo in product.photos.all %}
+                        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                              <div class="carousel-item active"> 
+                            {% if product.photos.all %}
+                                {% for photo in product.photos.all %}
                                 <img src="{{ photo.photo.url }}" width="200" height="200" alt="..." style="object-fit: cover;">
-                            {% endfor %}
-                        {% endif %}
-                    </div>
+                                {% endfor %}
+                            {% endif %}
+                                    </div>
+                              </div>
+                              
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                              <span class="visually-hidden">Предыдущий</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                              <span class="visually-hidden">Следующий</span>
+                            </button>
+                          </div>
+                       
 
                 </div>
             {% endfor %}
