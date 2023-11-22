@@ -1,39 +1,20 @@
+from django.http import HttpRequest, HttpResponse, Http404
 from django.shortcuts import render
 from django.views.generic import TemplateView, ListView
 
-from .models import ShoesModel, JacketModel
-from .service import ShoesFilter, JacketFilter
-
-
-class FilteredListView(ListView):
-    filterset_class = None
-
-    def get_queryset(self):
-        queryset = super().get_queryset()
-        self.filterset = self.filterset_class(self.request.GET, queryset=queryset)
-        return self.filterset.qs.distinct()
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['filterset'] = self.filterset
-        return context
+from .models import CATEGORY
+from .service import FILTERS
 
 
 class CatalogTemplateView(TemplateView):
     template_name = 'goods/catalog.html'
 
 
-class ShoesFilteredListView(FilteredListView):
-    model = ShoesModel
-    paginate_by = 20
-    filterset_class = ShoesFilter
-    context_object_name = 'shoes'
-    template_name = 'goods/shoes.html'
-
-
-class JacketFilteredListView(FilteredListView):
-    model = JacketModel
-    paginate_by = 20
-    filterset_class = JacketFilter
-    context_object_name = 'jackets'
-    template_name = 'goods/jacket.html'
+class ProductListView(ListView):
+    def get(self, request: HttpRequest, category) -> HttpResponse:
+        if category not in [key for key in CATEGORY.keys()]:
+            raise Http404('Указана неизвестная категория товара')
+        goods = CATEGORY[category].objects.all()
+        ProductFilter = FILTERS.get(category)
+        f = ProductFilter(request.GET, queryset=goods)
+        return render(request, 'goods/product.html', {'filter': f})

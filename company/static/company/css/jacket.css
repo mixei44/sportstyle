@@ -1,0 +1,28 @@
+
+.sm-page-title__content{
+    display: inline-flex;
+    flex-wrap: wrap;
+}
+
+.sm-catalog__title .sm-text--h2 {
+    margin-right: 15px;
+}
+
+.sm-text--h2 {
+    font-size: 40px;
+}
+
+/*товар */
+.sm-product-grid--size-xs {
+    grid-gap: 44px 18px;
+}
+
+.sm-product-grid--size-xs {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.sm-product-grid {
+    display: grid;
+    position: relative;
+    z-index: 2;
+}

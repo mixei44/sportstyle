@@ -22,10 +22,10 @@
                         Женщинам
                     </a>
                     <ul class="dropdown-menu dropdown-menu-dark">
-                      <li><a class="dropdown-item" href="{% url 'jacket' %}">Куртки</a></li>
-                      <li><a class="dropdown-item" href="{% url 'obuv' %}">Кроссовки</a></li>
-                      <li><a class="dropdown-item" href="{% url 'termobele' %}">Термобелье</a></li>
-                      <li><a class="dropdown-item" href="{% url 'dzhemper' %}">Джемпер</a></li>
+                      <li><a class="dropdown-item" href="{% url 'product' category='jacket' %}?gender=F">Куртки</a></li>
+                      <li><a class="dropdown-item" href="{% url 'product' category='shoes' %}?gender=F">Обувь</a></li>
+                      <li><a class="dropdown-item" href="{% url 'product' category='thermal' %}?gender=F">Термобелье</a></li>
+                      <li><a class="dropdown-item" href="{% url 'product' category='jumper' %}?gender=F">Джемпер</a></li>
                     </ul>
                   </li>
                   <li class="nav-item dropdown">
@@ -33,20 +33,20 @@
                         Мужчинам
                     </a>
                     <ul class="dropdown-menu dropdown-menu-dark">
-                      <li><a class="dropdown-item" href="{% url 'jacket' %}">Куртки</a></li>
-                      <li><a class="dropdown-item" href="{% url 'obuv' %}">Кроссовки</a></li>
-                      <li><a class="dropdown-item" href="{% url 'termobele' %}">Термобелье</a></li>
-                      <li><a class="dropdown-item" href="{% url 'dzhemper' %}">Джемпер</a></li>
+                      <li><a class="dropdown-item" href="{% url 'product' category='jacket' %}?gender=M">Куртки</a></li>
+                      <li><a class="dropdown-item" href="{% url 'product' category='shoes' %}?gender=M">Обувь</a></li>
+                      <li><a class="dropdown-item" href="{% url 'product'  category='thermal' %}?gender=M">Термобелье</a></li>
+                      <li><a class="dropdown-item" href="{% url 'product' category='jumper' %}?gender=M">Джемпер</a></li>
                     </ul>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Детям
                         </a>
                         <ul class="dropdown-menu dropdown-menu-dark">
-                          <li><a class="dropdown-item" href="{% url 'jacket' %}">Куртки</a></li>
-                          <li><a class="dropdown-item" href="{% url 'obuv' %}">Кроссовки</a></li>
-                          <li><a class="dropdown-item" href="{% url 'termobele' %}">Термобелье</a></li>
-                          <li><a class="dropdown-item" href="{% url 'dzhemper' %}">Джемпер</a></li>
+                          <li><a class="dropdown-item" href="{% url 'product' category='jacket' %}?age_type=K">Куртки</a></li>
+                          <li><a class="dropdown-item" href="{% url 'product' category='shoes' %}?age_type=K">Обувь</a></li>
+                          <li><a class="dropdown-item" href="{% url 'product' category='thermal' %}?age_type=K">Термобелье</a></li>
+                          <li><a class="dropdown-item" href="{% url 'product' category='jumper' %}?age_type=K">Джемпер</a></li>
                           </div>
                   </li>
                 </ul>

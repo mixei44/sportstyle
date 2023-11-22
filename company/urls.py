@@ -10,6 +10,5 @@ urlpatterns = [
     path('trouser/', TrouserTemplateView.as_view(), name='trouser'),
     path('termobele/', TermobeleTemplateView.as_view(), name='termobele'),
     path('dzhemper/', DzhemperTemplateView.as_view(), name='dzhemper'),
-    
 
 ]

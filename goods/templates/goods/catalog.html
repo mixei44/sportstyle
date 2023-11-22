@@ -2,15 +2,8 @@
 {% load static %}
 {% block title %}SportStyle - Каталог{% endblock %}
 {% block content %}
-<!-- 
-<div class="container">
-    <img src="/static/images/about 4.jpg" width="720" height="720" alt="sex" style="object-fit: cover;">
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis amet minima el
-    igendi fugit doloremque cupiditate provident neque! Neque dolores commodi fugit
-    distinctio explicabo debitis consectetur voluptatibus aliquid! Omnis, impedit ullam?
-</div> -->
-
-<!-- <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+<!-- Реклам на ссайте  -->
+ <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
     <div class="carousel-indicators">
       <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
       <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -18,13 +11,13 @@
     </div>
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img src="/static/images/about 4.jpg" width="580" height="580" class="d-block w-100" alt="...">
+        <img src="static\images\Baner-1.webp" width="1000" height="580" class="d-block w-100" alt="...">
       </div>
       <div class="carousel-item">
-        <img src="/static/images/about 4.jpg" width="580" height="580" class="d-block w-100" alt="...">
+        <img src="static\images\Baner-2.webp" width="1000" height="580" class="d-block w-100" alt="...">
       </div>
       <div class="carousel-item">
-        <img src="/static/images/about 4.jpg" width="580" height="580" class="d-block w-100" alt="...">
+        <img src="static\images\Baner-3.webp" width="1000" height="580" class="d-block w-100" alt="...">
       </div>
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -37,23 +30,79 @@
     </button>
   </div>
 
+
+<!-- В начале  -->
 <div data-seleniun="commendations"class="Bestseller">
   <h2 data-seleniun="block__title"class="sm__block__title">
     <span class="sm__text sm__text__h2 sm__text__medium">
       Хиты продаш
     </span>
   </h2>
-  
-</div> -->
-
-
-<div class="container">
-  <a href="{% url 'shoes' %}">Shoes ----Женщины</a>
+</div>
+<!--  по середине  -->
+<div data-seleniun="commendations"class="Bestseller">
+  <h2 data-seleniun="block__title"class="sm__block__title">
+    <span class="sm__text sm__text__h2 sm__text__medium">
+        ПОПУЛЯРНЫЕ ТОВАРЫ СО СКИДКАМИ
+    </span>
+  </h2>
 </div>
 
+<!-- Нижние описание  -->
+<div class="wrap">
+  <section class="slot__titel_container">
+    <div class="slot__titel">Спортстайл 
 
+    </div>
+  </section>
+  <section class="srol_1_content">
+    <div class="stol_1_content_1">
+    <picture>
 
+      <source srcset="static\images\Photo-2.webp"  media="(max-width: 640px)">
+      <img loading="lazy" src="static\images\Photo-1.jpg" width="" height="" alt="">
 
-  
+      </picture>
+    </div>
+    <div class="stol_1_content_2">
+      <div class="stol_1_content_2_text">
+        <div class="stol_1_content_2_text_adr">
+          <a href="/company/shops/" class="stol_1_content_2_text_adr_t">
+          Адрес нашего магазина
+            </a>
+        </div>
+        <P class="stol_1_content_2_text_adr_d">
+          Наши стандартные магазины, в которых есть все для спорта и активного</br> отдыха: от самых простых аксессуаров до технологичного снаряжения.
+          </P>
+        </div>
+      </div>
+        <div class="stol_1_content_3">
+          <img loading="lazy" src="static\images\Photo-2.webp" width="" height="" alt="">
+      </div>
+  </section>
 
+<section class="bock__service mt-5">
+  <div class="service__txt__wrap">
+    <div class="service__txt__h1">Доставка и оплата</div>
+      <div class="service__txt_p">Оплата наличными курьеру или</br> банковской картой без комиссии</div>
+  </div>
+
+  <div class="service__txt__wrap">
+    <div class="service__txt__h1">Условия возврата</div>
+      <div class="service__txt_p">Быстрый возврат, если товар</br> не соответствует качеству</div>
+  </div>
+
+  <div class="service__txt__wrap">
+    <div class="service__txt__h1">Гарантийное обслуживание</div>
+      <div class="service__txt_p">На все товары, приобретенные в сети<br>СПОРТСТАЙЛ, распространяется срок<br> гарантии фирм-производителей.</div>
+  </div>
+</section>
+
+<div class="container__description">
+  <div id="text" class="container__description">
+    <p>Спортмастер — международная сеть магазинов качественного спортивного инвентаря для фитнеса, летних и зимних видов спорта, а также товаров для активного отдыха. 
+      В сети магазинов и на нашем сайте Вы найдете тренажеры,<br> спортивную одежду и обувь на любой сезон. Отдельное внимание наша сеть уделяет товарам для детей — мы предлагаем форму, обувь и снаряды для уроков физкультуры, а также самостоятельных занятий спортом. 
+      Широкий <br>выбор спорттоваров в сети Спортмастер делает спорт доступным для всех!</p>
+  </div>
+</div>
 {% endblock %}

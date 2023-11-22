@@ -68,7 +68,7 @@ body {
     padding: 4%;
     width: 59.4%;
     color: #fff;
-    background-color: #1551e5;
+    background-color: #212529;
 }
 
 .about__block__h2{
@@ -107,6 +107,7 @@ body {
 .about__container_3{
     display: flex;
     flex-wrap: nowrap;
+    width: 115%;
     -webkit-box-pack: justify;
     justify-content: space-between;
 }
@@ -148,14 +149,13 @@ body {
     position: absolute;
     top: -64px;
     right: 0;
-    width: 90%;
+    width: 25%;
     background-color: #1551e5;
     color: #fff;
 }
 
 
 .about__block__linck{
-    display: flex;
     -webkit-box-pack: justify;
     justify-content: space-between;;
     flex-wrap: wrap;

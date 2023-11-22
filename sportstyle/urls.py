@@ -11,3 +11,6 @@ urlpatterns = [
 
 admin.site.site_header = 'SportStyle'
 admin.site.index_title = 'Администрирование SportStyle'
+
+# handler404 = 'sportstyle.views.custom_404'
+# handler500 = 'sportstyle.views.custom_500'

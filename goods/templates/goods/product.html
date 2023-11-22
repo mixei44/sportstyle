@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}SportStyle - Каталог{% endblock %}
+{% block content %}
+    <div class="cards">
+        <form method="get">
+            {{ filter.form.as_p }}
+            <input type="submit" />
+        </form>
+        <form method="get">
+            <button>Отчистить</button>
+        </form>
+
+        {% if filter.qs %}
+            {% for product in filter.qs %}
+                <div class="card">
+                    {{ product.title }}<br/>
+                    {{ product.price }}P
+
+                    <div class="d-flex">
+                        {% if product.photos.all %}
+                            {% for photo in product.photos.all %}
+                                <img src="{{ photo.photo.url }}" width="200" height="200" alt="..." style="object-fit: cover;">
+                            {% endfor %}
+                        {% endif %}
+                    </div>
+
+                </div>
+            {% endfor %}
+        {% else %}
+                <h2 style="text-align: center;">Ничего не найдено :(</div>
+        {% endif %}
+    </div>
+{% endblock %}
