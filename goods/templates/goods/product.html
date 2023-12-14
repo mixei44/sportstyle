@@ -7,7 +7,6 @@
 {% endblock %}
 
 {% block title %}SportStyle - Каталог{% endblock %}
-
 {% block content %}
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="{% static 'fotorama/fotorama.js' %}"></script>
@@ -28,7 +27,7 @@
         {% if filter.qs %}
             {% for product in filter.qs %}
                 <div class="card__product">
-                    {% if not product.photos.all %}
+                    {% if product.photos.all %}
                     <!-- https://fotorama.io/docs/4/ -->
                         <div 
                             class="fotorama"

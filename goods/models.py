@@ -5,7 +5,9 @@ from django.utils.html import mark_safe
 
 GENDER = [
     ('M', 'Мужской'),
-    ('F', 'Женский')
+    ('F', 'Женский'),
+    ('B', 'Мальчик'),
+    ('G', 'Девочка'),
 ]
 
 AGE_TYPE = [
@@ -79,7 +81,7 @@ class ShoesModel(models.Model):
     gender = models.CharField('Пол', max_length=1, choices=GENDER)
     age_type = models.CharField('Возрастная категория', max_length=1, choices=AGE_TYPE)
     sport_type = models.CharField('Вид спорта', max_length=1, choices=SPORT_TYPE, blank=True)
-    season = models.CharField('Сезон', max_length=1, choices=SEASON)
+    season = models.CharField('Сезон', max_length=1, choices=SEASON, blank=True)
     guarantee_period = models.PositiveIntegerField('Срок гарантии', null=True, blank=True)
     product_authenticity_guarantee = models.BooleanField('Гарантия подлинности товара')
 

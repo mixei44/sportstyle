@@ -13,9 +13,9 @@
 
 .card__product {
     max-width: 200px;
-    max-height: 300px;
+    max-height: 350px;
     display: grid;
-    grid-template-rows: 240px;
+    grid-template-rows: 240px 1fr;
     border: 3px solid teal;
     border-radius: 5px;
 }
