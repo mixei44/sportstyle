@@ -34,11 +34,44 @@ body {
        
     }
 
+    nav.footer__nav {
+        padding-left: 383px;
+        width: 105%;
+        padding-right: 305px;
+        background-color: #212529;
+        font-size: 20px;
+    }
+
 }
 
-
-
 @media (max-width: 990px) {
+
+    nav.bg-dark {
+        width: 101%;
+    }
+
+    nav.footer__nav {
+        padding-left: 228px;
+        width: 101%;
+        padding-right: 186px;
+        background-color: #212529;
+        font-size: 20px;
+    }
+
+    section.about__container {
+        display: flex;
+        -webkit-box-pack: justify;
+        justify-content: space-between;
+        -webkit-box-align: center;
+        align-items: center;
+        margin: 46px;
+        margin-bottom: 30px;
+        line-height: 43px;
+    }
+
+    div.navbar>.container, .navbar>.container-fluid, .navbar>.container-lg, .navbar>.container-md, .navbar>.container-sm, .navbar>.container-xl, .navbar>.container-xxl {
+        width: 900px;
+    }
 
     div.about__title img {
         width: 113%;
@@ -47,12 +80,19 @@ body {
 
     div.sm-shop-type {
         display: flex;
-        margin: -69px;
+        margin: 17px;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    div.mt-5 {
+        margin-top: 0.5rem!important;
     }
 
     h1.sm__text__h1 {
         font-size: 36px;
         letter-spacing: 6px;
+        margin-left: 32px;
         text-transform: uppercase;
     }
 }
@@ -68,10 +108,10 @@ body {
         margin-bottom: 30px;
         line-height: 30px;
     }
-
+/* текст с верху  */
     div.sm-shop-type {
         display: flex;
-        margin: -108px;
+        margin: -95px;
         margin-top: -2rem!important;
     }
 
@@ -86,23 +126,37 @@ body {
     }
 
     div.about__title{
-        left: 10%;
+        margin-left: 33px;
 
     }
 
     div.about__title img {
-        width: 113%;
-        margin-top: -7rem!important;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 842px;
+        margin-top: -6rem!important;
         height: 444px;
+        margin-bottom: 40px;
+        
     }
-
+/* текст с верху  */
     div.sm-shop-type__info {
-        margin-left: 9px;
+        margin-left: 123px;
         flex: 1;
     }
 
+    /* подавал */
+    nav.footer__nav {
+        padding-left: 228px;
+        width: 111%;
+        padding-right: 186px;
+        background-color: #212529;
+        font-size: 20px;
+    }
+/* шабка */
     nav.bg-dark {
-        width: 105%;
+        width: 111%;
        
     }
 
@@ -117,20 +171,28 @@ body {
     }
 
     div.about__title img {
-        width: 92%;
+        width: 664px;
         margin-top: -4rem!important;
-        height: 257px;
+        height: 307px;
     }
 
     div.sm-shop-type__info {
-        margin-left: 31px;
+        margin-left: 56px;
         flex: 1;
     }
 
     nav.bg-dark {
-        width: 105%;
+        width: 111%;
        
     }
+    nav.footer__nav {
+        padding-left: 228px;
+        width: 111%;
+        padding-right: 186px;
+        background-color: #212529;
+        font-size: 18px;
+    }
+
 
     div.mt-5 {
         margin-top: 5rem!important;
@@ -155,12 +217,12 @@ body {
 @media (max-width: 418px) {
     
     div.navbar>.container, .navbar>.container-fluid, .navbar>.container-lg, .navbar>.container-md, .navbar>.container-sm, .navbar>.container-xl, .navbar>.container-xxl {
-        width: 79%;
+        width: 80%;
     }
 
 
     nav.bg-dark {
-        width: 113%;
+        width: 101%;
        
     }
 
@@ -172,30 +234,49 @@ body {
 
     h1.sm__text__h1 {
         font-size: 22px;
-        letter-spacing: 2px;
+        letter-spacing: 0px;
         text-transform: uppercase;
     }
 
+    nav.footer__nav {
+        padding-left: 65px;
+        width: 101%;
+        padding-right: 74px;
+        background-color: #212529;
+        font-size: 8px;
+    }
+
+    ul.dl, ol, ul {
+        margin-top: 6px;
+        margin-bottom: 1rem;
+    }
+
+    div.navbar-collapse {
+        margin-left: -110px;
+        flex-basis: 154%;
+        flex-grow: 1;
+        align-items: center;
+    }
+
     div.sm-shop-type__info {
-        margin-left: 14px;
+        margin-left: 72px;
         flex: 1;
     }
 
     div.mt-5 {
         margin-top: 3rem!important;
+        margin-left: 54px;
     }
+
     div.about__title img {
-        width: 92%;
-        margin-top: -2rem!important;
-        height: 257px;
+        width: 286px;
+        margin-left: 0px;
+        margin-top: -1rem!important;
+        margin-bottom: 30px;
+        height: 233px;
     }
-
-
-
 
 }
-
-
 
 .sm__title{
     display: flex;
