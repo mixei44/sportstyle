@@ -46,7 +46,9 @@ INSTALLED_APPS = [
     'user',
     # pip
     'ckeditor',
-    'django_filters'
+    'django_filters',
+    # 'captcha',
+    'widget_tweaks',
 ]
 
 MIDDLEWARE = [
@@ -201,3 +203,14 @@ CKEDITOR_CONFIGS = {
         ]),
     },
 }
+
+
+RECAPTCHA_PUBLIC_KEY = '6Lf0IY0kAAAAAMTScUcA-jMgviCoUS9ADrP4u0c0'
+RECAPTCHA_PRIVATE_KEY = '6Lf0IY0kAAAAALMW3Nm_E-_PvKxGgtSzXat7TmBy'
+
+DEFAULT_FROM_EMAIL = 'sportstyle@info.com'
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp-relay.sendinblue.com'
+EMAIL_HOST_USER = 'sosrebetodo@gmail.com'
+EMAIL_HOST_PASSWORD = 'Fvym3HsGbcNKEAPV'
+EMAIL_PORT = 587

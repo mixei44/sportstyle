@@ -14,7 +14,7 @@ class CustomUserAdmin(UserAdmin):
     add_fieldsets = (
         (None, {
             'classes': ('wide',),
-            'fields': ('email', 'email_verify', 'password1', 'password2'),
+            'fields': ('username', 'email', 'email_verify', 'password1', 'password2'),
         }),
     )
     readonly_fields = ('date_sent_mail', )
