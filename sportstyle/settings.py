@@ -50,7 +50,9 @@ INSTALLED_APPS = [
     'user',
     # pip
     'ckeditor',
-    'django_filters'
+    'django_filters',
+    # 'captcha',
+    'widget_tweaks',
 ]
 
 MIDDLEWARE = [
