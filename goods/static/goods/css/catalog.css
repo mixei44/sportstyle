@@ -168,3 +168,14 @@ body {
     letter-spacing: normal;
     font-weight: 400;
 }
+
+/* ???? */
+
+.catalog__products {
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.carousel-inner img {
+    object-fit: cover;
+}

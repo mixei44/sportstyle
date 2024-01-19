@@ -97,6 +97,7 @@ class ShoesModel(models.Model):
         return self.title
     
     class Meta:
+        ordering = ['-id']
         verbose_name = 'Обувь'
         verbose_name_plural = 'Обувь'
 
@@ -165,6 +166,7 @@ class JacketModel(models.Model):
         return self.title
     
     class Meta:
+        ordering = ['-id']
         verbose_name = 'Куртка'
         verbose_name_plural = 'Куртки'
 
@@ -217,6 +219,7 @@ class TrouserModel(models.Model):
         return self.title
     
     class Meta:
+        ordering = ['-id']
         verbose_name = 'Брюки'
         verbose_name_plural = 'Брюки'
 
@@ -262,6 +265,7 @@ class ThermalUnderwearModel(models.Model):
         return self.title
     
     class Meta:
+        ordering = ['-id']
         verbose_name = 'Термобелье'
         verbose_name_plural = 'Термобелье'
     
@@ -274,6 +278,7 @@ class ThermalUnderwearPhotoModel(PhotoMixin, models.Model):
         return self.photo.path
     
     class Meta:
+        ordering = ['-id']
         verbose_name = 'Фото термобелье'
         verbose_name_plural = 'Фото термобелье'
 
@@ -312,6 +317,7 @@ class JumperModel(models.Model):
         return self.title
     
     class Meta:
+        ordering = ['-id']
         verbose_name = 'Джемпер'
         verbose_name_plural = 'Джемперы'
 
@@ -333,4 +339,12 @@ CATEGORY = {
     'trousers': TrouserModel,
     'thermal': ThermalUnderwearModel,
     'jumper': JumperModel,
+}
+
+CATEGORY_TRANSLATE = {
+    'shoes': 'Обувь',
+    'jacket': 'Куртка',
+    'trousers': 'Штаны',
+    'thermal': 'Термобелье',
+    'jumper': 'Джемпер',
 }

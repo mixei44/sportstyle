@@ -19,7 +19,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # env
 
-CONFIG = dotenv_values('../.env')
+CONFIG = dotenv_values('.env')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
@@ -48,10 +48,11 @@ INSTALLED_APPS = [
     'goods',
     'company',
     'user',
+    'policy',
     # pip
     'ckeditor',
     'django_filters',
-    # 'captcha',
+    'django_recaptcha',
     'widget_tweaks',
 ]
 
@@ -128,6 +129,8 @@ USE_I18N = True
 USE_TZ = True
 
 AUTH_USER_MODEL = "user.User" 
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/

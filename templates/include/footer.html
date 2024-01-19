@@ -1,7 +1,10 @@
 <!-- Подвал сайта  сайта  -->
 {% load static %}
 
-<footer>
+<!-- <span> SportStyle44@mail.ru <p>
+    +7 999 123-45-67</p></span> -->
+
+<!-- <footer>
     <nav class="footer__nav">
         <div class="container d-flex justify-content-between">
             <section>
@@ -23,6 +26,31 @@
                     <li><a href="{% url 'partner' %}"> Наши партнеры </p></a></li>
             </section>       
         </div>
+
+        <section class="container d-flex justify-content-evenly">
+            <a href="mailto:sportstyle44@mail.ru" class="">SportStyle44@mail.ru</a>
+            <a href="tel:+79991234567" class="">+7 999 123-45-67</a>
+        </section>
+    </nav>
+    
+
+</footer> -->
+
+<footer>
+    <nav class="footer__nav d-flex justify-content-center">
+        <div class="container d-flex flex-column">
+            <section>
+                <ul class="footer__list">
+                    <li><a href="{% url 'about' %}"> <p>О нас </p></a></li>
+                    <li><a href="{% url 'shop' %}"> Магазины </p></a></li>
+                    <li><a href="{% url 'partner' %}"> Наши партнеры </p></a></li>
+                </ul>
+        </div>
+
+        <section class="container d-flex flex-column">
+            <a href="mailto:sportstyle44@mail.ru" class="">SportStyle44@mail.ru</a>
+            <a href="tel:+79991234567" class="">+7 999 123-45-67</a>
+        </section>
     </nav>
     
 

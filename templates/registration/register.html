@@ -1,13 +1,13 @@
 {% extends 'base.html' %}
 
-{% load static widget_tweaks i18n %}
-
-{% block title %}{% trans "Sign up" %}{% endblock %}
+{% load static widget_tweaks %}
+ 
+{% block title %}Зарегистрироваться{% endblock %}
 
 {% block content %}
     <div class="container">
         <div class="card white-text mt-3">
-            <div class="card-header fs-5 text-center">{% trans "Sign up" %}</div>
+            <div class="card-header fs-5 text-center">Зарегистрироваться</div>
 
             <div class="card-body">
                 <form action="{% url 'signup' %}" method="post" id="RForm">{% csrf_token %}
@@ -39,8 +39,8 @@
             </div>
 
             <div class="card-footer text-end">
-                <a href="{% url 'login' %}" class="btn btn-secondary" role="button">{% trans "Log in" %}</a>
-                <button type="button" class="btn btn-primary" id="RSubmit" >{% trans 'Sign up' %}</button>
+                <a href="{% url 'login' %}" class="btn btn-secondary" role="button">Авторизоваться</a>
+                <button type="button" class="btn btn-primary" id="RSubmit" >Зарегистрироваться</button>
             </div>
 
         </div>

@@ -30,12 +30,19 @@ body {
     font-size: 20px;
 }
 
+ul.footer__list {
+    padding: 0;
+    margin: 0;
+}
 
-.footer__list > li > a{
+.footer__list a {
     text-decoration: none;
     color:#FFF;
 }
 
+.footer__list p {
+    margin: 0;
+}
 
 /* Хиты продаш */
 .sm__text{
@@ -167,4 +174,11 @@ body {
     font-stretch: normal;
     letter-spacing: normal;
     font-weight: 400;
+}
+
+.nav-login{
+    text-decoration: none;
+    white-space: nowrap;
+    text-align: right;
+    color: #FFF;
 }

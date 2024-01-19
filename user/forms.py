@@ -4,13 +4,11 @@ from django.contrib.auth import get_user_model, password_validation
 from django.contrib.sites.shortcuts import get_current_site
 from django.utils.safestring import mark_safe
 from django.core.exceptions import ValidationError
-from django.conf import settings
 from django.urls import reverse_lazy
 from django import forms
-# from captcha.fields import ReCaptchaField
+from django_recaptcha.fields import ReCaptchaField
 
 from user.utils import send_mail, send_email_for_verify, check_cd_mail
-# from user.tasks import send_email_for_verify_celery, send_email_for_reset_celery
 
 
 User = get_user_model()
@@ -24,7 +22,7 @@ errors_captcha = {
 
 class ASCIIUsernameValidatorNew(ASCIIUsernameValidator):
     """Custom validator: custom regex, -/_/. characters"""
-    regex = settings.USERNAME_REGEX
+    regex = r'^[a-zA-Z0-9_.-]+$'
     message = (
         "Enter a valid username. This value may contain only English letters, numbers, and -/_/. characters."
     )
@@ -32,7 +30,7 @@ class ASCIIUsernameValidatorNew(ASCIIUsernameValidator):
 
 class ASCIIPasswordValidator(ASCIIUsernameValidatorNew):
     """Custom validator: regex, @/./+/-/_ characters"""
-    regex = settings.PASSWORD_REGEX
+    regex = r'^[\w.@+-]+\Z'
     message = "Enter a valid password. This value may contain only English letters, numbers, and @/./+/-/_ characters."
 
 
@@ -57,7 +55,8 @@ class UserCreationFormNew(UserCreationForm):
         self.fields['password2'].widget.attrs.update({'id': 'RPassword2'})
         self.fields['captcha'].widget.attrs.update({'id': 'RCaptcha'})
         self.fields['accept_check'].widget.attrs.update({'id': 'RPolicy'})
-        self.fields['accept_check'].label = mark_safe("I accept <a class=\"reference\" href=\"%s\">the privacy policy</a>") % (policy, )
+        self.fields['accept_check'].label = mark_safe("I accept <a class=\"reference\" href=\"%s\">the privacy policy</a>" % (policy,)
+)
 
     username_validator = ASCIIUsernameValidatorNew()
     password_validator = ASCIIPasswordValidator()
@@ -66,7 +65,7 @@ class UserCreationFormNew(UserCreationForm):
     email = forms.EmailField(label="Email", max_length=72)
     password1 = forms.CharField(label="Password", min_length=8, validators=[password_validator])
     password2 = forms.CharField(label="Password confirmation", min_length=8, validators=[password_validator])
-    # captcha = ReCaptchaField(required=True, error_messages=errors_captcha)
+    captcha = ReCaptchaField(required=True, error_messages=errors_captcha)
     accept_check = forms.BooleanField(required=True)
 
 
@@ -108,9 +107,9 @@ class AuthenticationFormNew(AuthenticationForm):
         if not self.user_cache.email_verify:
             # Here if the user tries to log in without verifying the mail
             if not check_cd_mail(user=user):
-                raise ValidationError("You are asking for email confirmation too often. Please wait a bit and try again.", code="too_many_requests")
+                raise ValidationError("Вы запрашивате письмо-подтверждение слишком часто. Пожалйста, подождите немного и попробуйте еще раз.", code="too_many_requests")
             send_email_for_verify(domain=domain, user_id=self.user_cache.id)  # Without celery
-            raise ValidationError("Your email address has not been verified. Check your mail.", code="email_not_verified")
+            raise ValidationError("Ваш электронный ящик не подтвержден. Проверьте почту.", code="email_not_verified")
         if not user.is_active:
             raise ValidationError(
                 self.error_messages["inactive"],
@@ -129,13 +128,12 @@ class PasswordResetFormNew(PasswordResetForm):
         self.label_suffix = ""  # Removes : as label suffix
         self.fields['email'].widget.attrs.update({'id': 'PREmail'})
 
-    email = forms.EmailField(label="Email", max_length=settings.MAX_LENGTH_PASSWORD)
-    # captcha = ReCaptchaField(error_messages=errors_captcha, required=True)
+    email = forms.EmailField(label="Email") # , max_length=settings.MAX_LENGTH_PASSWORD
+    captcha = ReCaptchaField(error_messages=errors_captcha, required=True)
 
     def send_mail(self, subject_template_name, email_template_name, context, from_email, to_email, html_email_template_name=None):
         context['user'] = context['user'].id
         send_mail(context=context, to_email=to_email)  # Without celery
-        # send_email_for_reset_celery.delay(context=context, to_email=to_email)  # Celery
     
 
 class SetPasswordFormNew(SetPasswordForm):
@@ -156,13 +154,13 @@ class SetPasswordFormNew(SetPasswordForm):
         label="New password",
         strip=False,
         help_text=password_validation.password_validators_help_text_html(),
-        min_length=settings.MIN_LENGTH_PASSWORD, max_length=settings.MAX_LENGTH_PASSWORD
+        # min_length=settings.MIN_LENGTH_PASSWORD, max_length=settings.MAX_LENGTH_PASSWORD
     )
     new_password2 = forms.CharField(
         validators=[password_validator],
         label="New password confirmation",
         strip=False,
-        min_length=settings.MIN_LENGTH_PASSWORD, max_length=settings.MAX_LENGTH_PASSWORD
+        # min_length=settings.MIN_LENGTH_PASSWORD, max_length=settings.MAX_LENGTH_PASSWORD
     )
 
 
@@ -183,8 +181,8 @@ class PasswordChangeFormNew(SetPasswordFormNew, PasswordChangeForm):
     old_password = forms.CharField(
         label="Old password",
         strip=False,
-        min_length=settings.MIN_LENGTH_PASSWORD,
-        max_length=settings.MAX_LENGTH_PASSWORD,
+        # min_length=settings.MIN_LENGTH_PASSWORD,
+        # max_length=settings.MAX_LENGTH_PASSWORD,
     )
 
     def clean_old_password(self):

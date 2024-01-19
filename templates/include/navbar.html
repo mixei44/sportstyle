@@ -1,57 +1,56 @@
 <!-- Шабка  сайта  сайта  -->
-<header>
+<header>    
+   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      
+      <div class="container-fluid container">
+        <a class="navbar-brand" href="/">SportStyle</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+          <div class="nav">
+          <ul class="navbar-nav">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Женщинам
+              </a>
+              <ul class="dropdown-menu dropdown-menu-dark">
+                <li><a class="dropdown-item" href="{% url 'products' category='jacket' %}?gender=F">Куртки</a></li>
+                <li><a class="dropdown-item" href="{% url 'products' category='shoes' %}?gender=F">Обувь</a></li>
+                <li><a class="dropdown-item" href="{% url 'products' category='thermal' %}?gender=F">Термобелье</a></li>
+                <li><a class="dropdown-item" href="{% url 'products' category='jumper' %}?gender=F">Джемпер</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Мужчинам
+              </a>
+              <ul class="dropdown-menu dropdown-menu-dark">
+                <li><a class="dropdown-item" href="{% url 'products' category='jacket' %}?gender=M">Куртки</a></li>
+                <li><a class="dropdown-item" href="{% url 'products' category='shoes' %}?gender=M">Обувь</a></li>
+                <li><a class="dropdown-item" href="{% url 'products'  category='thermal' %}?gender=M">Термобелье</a></li>
+                <li><a class="dropdown-item" href="{% url 'products' category='jumper' %}?gender=M">Джемпер</a></li>
+              </ul>
+              <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Детям
+                  </a>
+                  <ul class="dropdown-menu dropdown-menu-dark">
+                    <li><a class="dropdown-item" href="{% url 'products' category='jacket' %}?age_type=K">Куртки</a></li>
+                    <li><a class="dropdown-item" href="{% url 'products' category='shoes' %}?age_type=K">Обувь</a></li>
+                    <li><a class="dropdown-item" href="{% url 'products' category='thermal' %}?age_type=K">Термобелье</a></li>
+                    <li><a class="dropdown-item" href="{% url 'products' category='jumper' %}?age_type=K">Джемпер</a></li>
 
-    <!-- 
-    
-<span> SportStyle44@mail.ru <p>
-    +7 999 123-45-67</p></span>
-
-         -->
-
-         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <div class="container-fluid container">
-              <a class="navbar-brand" href="/">SportStyle</a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
-                <div class="nav">
-                <ul class="navbar-nav">
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Женщинам
-                    </a>
-                    <ul class="dropdown-menu dropdown-menu-dark">
-                      <li><a class="dropdown-item" href="{% url 'product' category='jacket' %}?gender=F">Куртки</a></li>
-                      <li><a class="dropdown-item" href="{% url 'product' category='shoes' %}?gender=F">Обувь</a></li>
-                      <li><a class="dropdown-item" href="{% url 'product' category='thermal' %}?gender=F">Термобелье</a></li>
-                      <li><a class="dropdown-item" href="{% url 'product' category='jumper' %}?gender=F">Джемпер</a></li>
-                    </ul>
-                  </li>
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Мужчинам
-                    </a>
-                    <ul class="dropdown-menu dropdown-menu-dark">
-                      <li><a class="dropdown-item" href="{% url 'product' category='jacket' %}?gender=M">Куртки</a></li>
-                      <li><a class="dropdown-item" href="{% url 'product' category='shoes' %}?gender=M">Обувь</a></li>
-                      <li><a class="dropdown-item" href="{% url 'product'  category='thermal' %}?gender=M">Термобелье</a></li>
-                      <li><a class="dropdown-item" href="{% url 'product' category='jumper' %}?gender=M">Джемпер</a></li>
-                    </ul>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Детям
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-dark">
-                          <li><a class="dropdown-item" href="{% url 'product' category='jacket' %}?age_type=K">Куртки</a></li>
-                          <li><a class="dropdown-item" href="{% url 'product' category='shoes' %}?age_type=K">Обувь</a></li>
-                          <li><a class="dropdown-item" href="{% url 'product' category='thermal' %}?age_type=K">Термобелье</a></li>
-                          <li><a class="dropdown-item" href="{% url 'product' category='jumper' %}?age_type=K">Джемпер</a></li>
-                          </div>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </nav>
+                    </div>
+            </li>
+          </ul>
+        </div>
+        {% if request.user.is_authenticated %}
+        <a  class="nav-login" href="{% url 'logout' %}">Выход</a>
+      {% else %}
+        <a class="nav-login" href="{% url 'login' %}">Вход</a>
+      {% endif %}
+      </div>
+    </nav>
 
  </header>

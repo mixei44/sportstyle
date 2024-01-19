@@ -14,7 +14,7 @@ def send_email_for_verify(domain: str, user_id: int):
     """Verify mail"""
     user = User.objects.get(id=user_id)
 
-    if not user.email:  # If user haven't email 
+    if not user.email:  # If user hasn't email 
         return False
     
     context = {
