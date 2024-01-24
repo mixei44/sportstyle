@@ -1,363 +1,69 @@
-:root {
-    --white: #ffffff
-}
-body {
-    font-family: 'Montserrat', sans-serif;
+.shop-title {
+    font-size: clamp(28px, 5vw, 48px);
+    text-transform: uppercase;
 }
 
-
-@media (max-width: 1398px) {
-    div.about__title img{
-        width: 99%;
-        height: 542px;
-    }
-    div.sm-shop-type {
-        display: flex;
-        white-space: nowrap;
-        margin-top: 39px;
-        overflow-x: auto;
-    }
-
-    div.sm-shop-type__info {
-        margin-left: 2px;
-        flex: 1;
-    }
-}
-@media (max-width: 1198px) {
-    div.sm-shop-type__info {
-    margin-left: 18px;
-    flex: 1;
-    }
-
-    nav.bg-dark {
-        width: 105%;
-       
-    }
-
-    nav.footer__nav {
-        padding-left: 383px;
-        width: 105%;
-        padding-right: 305px;
-        background-color: #212529;
-        font-size: 20px;
-    }
-
+.shop-info__list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 0;
 }
 
-@media (max-width: 990px) {
+.shop-info__list li {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 25%;
+}
 
-    nav.bg-dark {
-        width: 101%;
-    }
+.shop-info__list li:not(:last-child) {
+    padding-right: 20px;
+}
 
-    nav.footer__nav {
-        padding-left: 228px;
-        width: 101%;
-        padding-right: 186px;
-        background-color: #212529;
-        font-size: 20px;
-    }
+.shop-address__section {
+    margin-top: 40px;
+    column-gap: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    align-items: center;
+}
 
-    section.about__container {
-        display: flex;
-        -webkit-box-pack: justify;
-        justify-content: space-between;
-        -webkit-box-align: center;
-        align-items: center;
-        margin: 46px;
-        margin-bottom: 30px;
-        line-height: 43px;
-    }
+.shop-address__section img {
+    max-width: 850px;
+    max-height: 500px;
+    object-fit: cover;
+}
 
-    div.navbar>.container, .navbar>.container-fluid, .navbar>.container-lg, .navbar>.container-md, .navbar>.container-sm, .navbar>.container-xl, .navbar>.container-xxl {
-        width: 900px;
-    }
-
-    div.about__title img {
-        width: 113%;
-        height: 444px;
-    }
-
-    div.sm-shop-type {
-        display: flex;
-        margin: 17px;
-        flex-direction: row;
+@media (max-width: 1120px) {
+    .shop-info__list {
         flex-wrap: wrap;
     }
 
-    div.mt-5 {
-        margin-top: 0.5rem!important;
+    .shop-info__list li {
+        flex-basis: 50%;
+        padding-right: 20px;
     }
 
-    h1.sm__text__h1 {
-        font-size: 36px;
-        letter-spacing: 6px;
-        margin-left: 32px;
-        text-transform: uppercase;
-    }
-}
-
-@media (max-width: 766px) {
-
-    section.about__container {
-        display: contents;
-        -webkit-box-pack: justify;
-        justify-content: space-between;
-        -webkit-box-align: center;
-        align-items: center;
-        margin-bottom: 30px;
-        line-height: 30px;
-    }
-/* текст с верху  */
-    div.sm-shop-type {
-        display: flex;
-        margin: -95px;
-        margin-top: -2rem!important;
+    .shop-address__section {
+        flex-direction: column;
+        align-items: start;
+        margin-left: 0;
+        margin-right: 0;    
     }
 
-    h1.sm__text__h1 {
-        font-size: 26px;
-        letter-spacing: 6px;
-        text-transform: uppercase;
-    }
-
-    div.mt-5 {
-        margin-top: 9rem!important;
-    }
-
-    div.about__title{
-        margin-left: 33px;
-
-    }
-
-    div.about__title img {
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        width: 842px;
-        margin-top: -6rem!important;
-        height: 444px;
-        margin-bottom: 40px;
-        
-    }
-/* текст с верху  */
-    div.sm-shop-type__info {
-        margin-left: 123px;
-        flex: 1;
-    }
-
-    /* подавал */
-    nav.footer__nav {
-        padding-left: 228px;
-        width: 111%;
-        padding-right: 186px;
-        background-color: #212529;
-        font-size: 20px;
-    }
-/* шабка */
-    nav.bg-dark {
-        width: 111%;
-       
-    }
+    .shop-address__section img {
+        max-width: none;
+        max-height: none;
+    }    
 
 }
 
-@media (max-width: 577px) {
-
-    div.sm-shop-type {
-        display: flex;
-        margin: -28px;
-        margin-top: -2rem!important;
+@media (max-width: 695px) {
+    .shop-info__list {
+        flex-direction: column;
     }
 
-    div.about__title img {
-        width: 664px;
-        margin-top: -4rem!important;
-        height: 307px;
+    .shop-info__list li {
+        flex-basis: 100%;
+        padding-right: 0;
     }
-
-    div.sm-shop-type__info {
-        margin-left: 56px;
-        flex: 1;
-    }
-
-    nav.bg-dark {
-        width: 111%;
-       
-    }
-    nav.footer__nav {
-        padding-left: 228px;
-        width: 111%;
-        padding-right: 186px;
-        background-color: #212529;
-        font-size: 18px;
-    }
-
-
-    div.mt-5 {
-        margin-top: 5rem!important;
-    }
-
-    div.navbar>.container, .navbar>.container-fluid, .navbar>.container-lg, .navbar>.container-md, .navbar>.container-sm, .navbar>.container-xl, .navbar>.container-xxl {
-        width: 85%;
-    }
-}
-
-@media (max-width: 508px) {
-
-    h1.sm__text__h1 {
-        font-size: 26px;
-        letter-spacing: 2px;
-        text-transform: uppercase;
-    }
-
-}
-
-
-@media (max-width: 418px) {
-    
-    div.navbar>.container, .navbar>.container-fluid, .navbar>.container-lg, .navbar>.container-md, .navbar>.container-sm, .navbar>.container-xl, .navbar>.container-xxl {
-        width: 80%;
-    }
-
-
-    nav.bg-dark {
-        width: 101%;
-       
-    }
-
-    div.sm-shop-type {
-        display: flex;
-        margin: -15px;
-        margin-top: -3rem!important;
-    }
-
-    h1.sm__text__h1 {
-        font-size: 22px;
-        letter-spacing: 0px;
-        text-transform: uppercase;
-    }
-
-    nav.footer__nav {
-        padding-left: 65px;
-        width: 101%;
-        padding-right: 74px;
-        background-color: #212529;
-        font-size: 8px;
-    }
-
-    ul.dl, ol, ul {
-        margin-top: 6px;
-        margin-bottom: 1rem;
-    }
-
-    div.navbar-collapse {
-        margin-left: -110px;
-        flex-basis: 154%;
-        flex-grow: 1;
-        align-items: center;
-    }
-
-    div.sm-shop-type__info {
-        margin-left: 72px;
-        flex: 1;
-    }
-
-    div.mt-5 {
-        margin-top: 3rem!important;
-        margin-left: 54px;
-    }
-
-    div.about__title img {
-        width: 286px;
-        margin-left: 0px;
-        margin-top: -1rem!important;
-        margin-bottom: 30px;
-        height: 233px;
-    }
-
-}
-
-.sm__title{
-    display: flex;
-    align-items: center;
-}
-/* растояния межлу шапкой  */
-.shop__tetle{
-    white-space: nowrap;
-    margin-top: 33px;
-    overflow-x: auto;
-}
-
-.content__tetle{
-    flex: 1 1 auto;
-}
-/*  */
-.sm__text__h1{
-    font-size: 48px;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-}
-/* Загаловок */
-.sm__text__medium{
-    font-stretch: normal;
-    font-weight: 500;
-}
-.shops-page__shops-types {
-    margin: 48px 0;
-}
-.sm-shops-types-list {
-    display: flex;
-    column-gap: 18px;
-}
-/*  */
-.sm-shops-types-list__item {
-    flex: 1;
-}
-
-.sm-shop-type {
-    padding: 21px 0 17px;
-}
-
-.sm-shop-type {
-    display: flex;
-}
-
-.sm-shop-type__info {
-    margin-left: 20px;
-    flex: 1;
-}
-
-
-.sm-shop-type__title {
-    font-size: 20px;
-    line-height: 28px;
-    font-stretch: normal;
-    letter-spacing: normal;
-    font-weight: 500;
-}
-
-
-.sm-shop-type__text {
-    font-size: 14px;
-    line-height: 20px;
-    font-stretch: normal;
-    letter-spacing: normal;
-    font-weight: 400;
-}
-
-
-.photo{
-    margin-bottom: 30px;
-}
-/* адрес где находиться Магазин */
-.about__container{
-    
-    display: flex;
-    -webkit-box-pack: justify;
-    justify-content: space-between;
-    -webkit-box-align: center;
-    align-items: center;
-    margin-bottom: 30px;
-    line-height:30px;
 }

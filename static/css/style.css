@@ -2,6 +2,11 @@ body {
     font-family: 'Montserrat', sans-serif;
 }
 
+img {
+    width: 100%;
+    height: auto;
+}
+
 .page-body {
     min-height: 100vh;
     display: grid;
@@ -11,23 +16,6 @@ body {
 
 .container {
     max-width: 1300px;
-}
-
-.nav{
-    margin-left: 225px;
-    background-color:#212529;
-}
-
-.dropdown-menu-dark {
-    background-color:#212529;
-    border-top: none;
-}
-
-.footer__nav {
-    padding-left: 383px;
-    padding-right: 305px;
-    background-color:#212529;
-    font-size: 20px;
 }
 
 ul.footer__list {
@@ -62,10 +50,6 @@ ul.footer__list {
 
 
 /* Нижние описание  */
-
-/* .wrap{
-    margin-bottom:46px;
-} */
 
 .slot__titel{
     position: relative;
@@ -174,11 +158,4 @@ ul.footer__list {
     font-stretch: normal;
     letter-spacing: normal;
     font-weight: 400;
-}
-
-.nav-login{
-    text-decoration: none;
-    white-space: nowrap;
-    text-align: right;
-    color: #FFF;
 }

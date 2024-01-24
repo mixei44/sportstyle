@@ -6,43 +6,49 @@
 {% endblock %}
 
 {% block title %}Магазин{% endblock %}
+
 {% block content %}
-
-
-<div class="sm__title shop__tetle">
-    <div class="content__tetle">
-        <h1 data-text-id="line-tetle"  class="sm__text__h1 sm__text__medium"> Магазин в г. Кострома</h1>
-
-    </div>
-</div>
-
-<div data-selenium="shop-types" class="sm-shops-types-list shops-page__shops-types">
-    <div class="sm-shop-type sm-shops-types-list__item mt-2">
-         <div class="sm-shop-type__info">
-
-            <div class="sm-shop-type__title">Супермаркет</p></div>Товары для спорта и активного</br> отдыха для всей семьи</div>
-        <div class="sm-shop-type__info">
-            <div class="sm-shop-type__title">Гипермаркет<p></p></div>Товары для спорта и активного</br> отдыха для всей семьи. Магазины с </br>максимальной площадью</div>
-        <div class="sm-shop-type__info">
-            <div class="sm-shop-type__title">PRO</p></div>Расширенный ассортимент </br>товаров и брендов для спорта.</br> PRO-эксперты. PRO-сервисы</div>
-        <div class="sm-shop-type__info">
-            <div class="sm-shop-type__title">Дисконт</p></div>Товары известных брендов для</br> спорта и активного отдыха со </br>скидками</div>
-            </div>
-        </div>
-        
-<!-- адрес где находиться Магазин -->
-
-<section class="about__container mt-4">
-    <div class="about__title mt-5">
-      <h2>Спортстайл</h2>
-      г.Кострома Индустриальная улица, 16, Кострома, 156016<br>Ежедневно с 10:00  до 22:00<br>+7(495)123-45-67
-      </div>
-    <div class="about__title mt-5">
-      <img src="../../static/company/images/shop/shop.png" width="850" height="500" alt="фото магазина на карте " style="object-fit: cover;">
-      </div>
-    </div>
+  <section>
+    <h1 class="shop-title mt-4"> Магазин в г. Кострома</h1>
+    <ul class="shop-info__list d-flex mt-4">
+        <li>
+            <h3>Супермаркет</h3>
+            <p>
+                Товары для спорта и активного отдыха для всей семьи
+            </p>
+        </li>
+        <li>
+            <h3>Гипермаркет</h3>
+            <p>
+                Товары для спорта и активног отдыха для всей семьи. Магазины с максимальной площадью
+            </p>
+        </li>
+        <li>
+            <h3>PRO</h3>
+            <p>
+                Расширенный ассортимент товаров и брендов для спорта. PRO-эксперты. PRO-сервисы
+            </p>
+        </li>
+        <li>
+            <h3>Дисконт</h3>
+            <p>
+                Товары известных брендов для спорта и активного отдыха со скидками
+            </p>
+        </li>
+    </ul>
   </section>
 
+  <section class="shop-address__section d-flex">
+    <div>
+        <h2>Спортстайл</h2>
+        <p>
+            г.Кострома Индустриальная улица, 16, Кострома, 156016
+        </p>
+        <p>Ежедневно с 10:00  до 22:00</p>
+        <p>+7(495)123-45-67</p>
+    </div>
+    <img src="../../static/company/images/shop/shop.png" width="850" height="500" alt="Фото магазина на карте">
+  </section>
 {% endblock %}
 
 

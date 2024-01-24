@@ -1,0 +1,37 @@
+.navbar-toggler {
+    display: none;
+    line-height: 1;
+    background-color: transparent;
+}
+
+.navbar-expand-lg .navbar-collapse {
+    display: flex !important;
+    flex-basis: auto;
+}
+
+.dropdown-menu-dark {
+    background-color:#212529;
+    border-top: none;
+}
+
+.nav-login{
+    text-decoration: none;
+    white-space: nowrap;
+    text-align: right;
+    color: #FFF;
+}
+/* 
+@media (max-width: 990px) {
+    nav.footer__nav {
+        background-color: #212529;
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    div.collapse.navbar-collapse {
+        display: flex!important;
+        flex-basis: auto;
+    }
+} */
