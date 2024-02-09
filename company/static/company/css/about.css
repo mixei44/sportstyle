@@ -5,62 +5,29 @@
 body {
     font-family: 'Montserrat', sans-serif;
 }
-.about__title img{
-    width: 99.8%;
-}
-.about__container__1 img{
-    width: 101.8%;
-}
 
-.about__container__3 img{
-    width: 129.8%;
-}
-.about__block__linck img{
-    width: 240.8%;
-    max-width: 597px;
-    height: auto;
-}
 @media (max-width: 1398px) {
 
     .about__container__1 img{
-        width: 99.9%;
         vertical-align: middle;
     }
 
     div.about__block {
         left: -40px;
-        padding: 2%;
-        width: 56.4%;
     }
-
-   div.about__container__3 img{
-    width: 101.8%;
-    }
-
-    div.about__container_3{
-        width: 100%;
-    }   
 
     div.about__block__linck img{
-        width: 240.8%;
         max-width: 597px;
         height: auto;
     }
 }
 
 @media (max-width: 1196px) {
-
-    div.about__title img{
-        width: 101.8%;
-    }
-
     .about__container__1 img{
-        width: 99.9%;
         vertical-align: middle;
     }
 
     div.about__block__linck img{
-        width: 240.8%;
         max-width: 597px;
         height: auto;
     }
@@ -69,7 +36,6 @@ body {
 
 
 @media (max-width: 990px) {
-   
     div.about__block__f {
         margin-top: -26px;
     }

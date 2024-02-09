@@ -1,4 +1,5 @@
 from django.http import HttpRequest, HttpResponse, Http404
+from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from django.shortcuts import render
 from django.views.generic import ListView
 from django.views import View
@@ -13,8 +14,29 @@ class ProductListView(ListView):
             raise Http404('Указана неизвестная категория товара')
         goods = CATEGORY[category].objects.all()
         ProductFilter = FILTERS.get(category)
-        f = ProductFilter(request.GET, queryset=goods)
-        return render(request, 'goods/products.html', {'filter': f, 'category': category})
+        products_qs = ProductFilter(request.GET, queryset=goods)
+        products_qs_form = products_qs.form
+        products_qs = products_qs.qs
+        
+        paginator = Paginator(products_qs, 15)
+        page, num_pages = request.GET.get('page'), paginator.num_pages
+        try:
+            response = paginator.page(page)
+            page = int(page)
+        except PageNotAnInteger:
+            response = paginator.page(1)
+            page = 1
+        except EmptyPage:
+            response = paginator.page(num_pages)
+        if num_pages <= 11 or page <= 6:  # case 1 and 2
+            pages = [x for x in range(1, min(num_pages + 1, 12))]
+        elif page > num_pages - 6:  # case 4
+            pages = [x for x in range(num_pages - 10, num_pages + 1)]
+        else:  # case 3
+            pages = [x for x in range(page - 5, page + 6)]
+        return render(request, 'goods/products.html', {
+            'filter': response,  'filter_form': products_qs_form, 'category': category, 'pages': pages
+        })
 
 
 class ProductDetailView(View):

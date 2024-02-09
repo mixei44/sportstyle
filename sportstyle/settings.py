@@ -31,7 +31,7 @@ SECRET_KEY = CONFIG.get('SECRET_KEY')
 DEBUG = True
 # DEBUG = False
 
-ALLOWED_HOSTS = ['192.168.1.115', '127.0.0.1']
+ALLOWED_HOSTS = ['192.168.1.115', '127.0.0.1', '192.168.56.1']
 # ALLOWED_HOSTS = []
 
 
@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     'django_filters',
     'django_recaptcha',
     'widget_tweaks',
+    'spurl',
 ]
 
 MIDDLEWARE = [

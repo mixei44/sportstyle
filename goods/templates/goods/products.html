@@ -14,62 +14,26 @@
     <div class="cards__container">
         <section class="cards__filter">
             <form method="get">
-                {{ filter.form.as_p }}
-                <input type="submit" />
+                {{ filter_form.as_p }}
+                <input type="submit" class="btn btn-primary" />
             </form>
             <form method="get">
-                <button>Отчистить</button>
+                <button class="btn btn-outline-primary">Отчистить</button>
             </form>
         </section>
 
         <div>
         <section class="cards">
-        {% if filter.qs %}
-            {% for product in filter.qs %}
-                <div class="card__product">
-                    
-                    {% if product.photos.all %}
-                    <!-- https://fotorama.io/docs/4/ -->
-                    
-                        <div 
-                            class="fotorama"
-                            data-width="100%"
-                            data-height="100%"
-                            data-minheight="240"
-                            data-maxheight="240"
-                        > 
-                            {% for photo in product.photos.all %}
-                                <div>
-                                <a href="{% url 'product' category=category pk=product.pk %}" class="d-block"> 
-                                    <img 
-                                        src="{{ photo.photo.url }}" 
-                                        class="card__photo" 
-                                        width="200" 
-                                        height="200" 
-                                        alt="..."
-                                    >
-                                </a>
-                                </div>
-                            {% endfor %}                                
-                        </div>
-                    {% else %}
-                    
-                        <div class="card__nophoto">
-                            <span class="visually-hidden">Нет фото</span>
-                        </div>
-                    {% endif %}
-                    <div class="card__product-body">
-                        <a href="{% url 'product' category=category pk=product.pk %}">
-                            {{ product.title }}
-                        </a>
-                        {{ product.price }}₽
-                    </div>
-                </div>
+        {% if filter %}
+            {% for product in filter %}
+                {% include 'include/product.html' with product=product category=category %}
             {% endfor %}
         {% else %}
                 <h2 style="text-align: center;">Ничего не найдено :(</div>
         {% endif %}
         </section>
+
+        {% include 'include/pagination.html' with products=filter %}
         </div>
     </div>
 {% endblock %}
