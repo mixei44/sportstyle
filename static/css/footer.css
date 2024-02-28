@@ -3,3 +3,17 @@ nav.footer__nav {
     font-size: 20px;
     margin-top: 20px;
 }
+
+ul.footer__list {
+    padding: 0;
+    margin: 0;
+}
+
+.footer__list a {
+    text-decoration: none;
+    color:#FFF;
+}
+
+.footer__list p {
+    margin: 0;
+}

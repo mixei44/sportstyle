@@ -1,0 +1,36 @@
+{% load widget_tweaks %}
+
+<form method="get">
+    <!-- {{ filter_form.as_p }} -->
+    <div class="form-floating mb-3">
+        {% render_field form.title type="text" class="form-control" placeholder="" %}
+        <label for="{{ form.title.id }}">Название</label>
+    </div>
+    
+    <div class="form-floating mb-3">
+        <input type="number" name="price_min" id="id_price_1" placeholder="" class="form-control">
+        <label for="id_price_1">Цена от</label>
+    </div>
+    
+    <div class="form-floating mb-3">
+        <input type="number" name="price_max" id="id_price_2" placeholder="" class="form-control">
+        <label for="id_price_2">Цена до</label>
+    </div>
+
+    <div>
+        <p>Бренд:</p>
+        {% for brand in form.fields.brand.queryset %}
+            <input class="form-check-input"  name="brand" type="checkbox" id="id_brand_{{ forloop.counter0 }}" value="{{ brand.pk }}">
+            <label class="form-check-label" for="id_brand_{{ forloop.counter0 }}">
+                {{ brand.title }}
+            </label>
+        {% endfor %}
+    </div>
+
+    
+    <button type="submit" class="btn btn-primary">Искать</button>
+</form>
+<form method="get">
+    <button class="btn btn-outline-primary">Отчистить</button>
+</form>
+

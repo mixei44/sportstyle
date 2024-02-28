@@ -34,6 +34,11 @@ DEBUG = True
 ALLOWED_HOSTS = ['192.168.1.115', '127.0.0.1', '192.168.56.1']
 # ALLOWED_HOSTS = []
 
+INTERNAL_IPS = [
+    '192.168.1.115',
+    '192.168.56.1',
+    "127.0.0.1",
+]
 
 # Application definition
 
@@ -55,9 +60,11 @@ INSTALLED_APPS = [
     'django_recaptcha',
     'widget_tweaks',
     'spurl',
+    # 'debug_toolbar',
 ]
 
 MIDDLEWARE = [
+    # 'debug_toolbar.middleware.DebugToolbarMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',

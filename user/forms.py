@@ -95,9 +95,9 @@ class AuthenticationFormNew(AuthenticationForm):
 
     username_validator = ASCIIUsernameValidator()
 
-    username = forms.CharField(label="username", min_length=4, max_length=72, validators=[username_validator])
-    password = forms.CharField(label="Password", min_length=8)
-    remember_me = forms.BooleanField(label="Remember me", required=False)
+    username = forms.CharField(label="Никнейм", min_length=4, max_length=72, validators=[username_validator])
+    password = forms.CharField(label="Пароль", min_length=8)
+    remember_me = forms.BooleanField(label="Запомнить меня", required=False)
 
     def get_invalid_login_error(self):
         return ValidationError(self.error_messages["invalid_login"] % {"username": "username"}, code="invalid_login")

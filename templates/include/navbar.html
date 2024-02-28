@@ -3,15 +3,18 @@
   <nav class="navbar navbar-expand-md navbar-dark bg-dark" data-bs-theme="dark">
       
     <div class="container-fluid container">
-      <a class="navbar-brand order-1" href="/">SportStyle</a>
+      <a class="navbar-brand order-1 d-flex justify-content-center gap-1" href="/">
+        <img src="../../static/icons/logo.svg" class="w-auto" width="24" height="24" alt="Логотип SportStyle">
+        SportStyle
+      </a>
         <div class="collapse navbar-collapse order-3" id="navbarNavDarkDropdown">
           <div class="nav">
-          <ul class="navbar-nav">
+          <ul class="navbar-nav w-100">
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Женщинам
               </a>
-              <ul class="dropdown-menu dropdown-menu-dark">
+              <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="{% url 'products' category='jacket' %}?gender=F">Куртки</a></li>
                 <li><a class="dropdown-item" href="{% url 'products' category='shoes' %}?gender=F">Обувь</a></li>
                 <li><a class="dropdown-item" href="{% url 'products' category='thermal' %}?gender=F">Термобелье</a></li>
@@ -22,7 +25,7 @@
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Мужчинам
               </a>
-              <ul class="dropdown-menu dropdown-menu-dark">
+              <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="{% url 'products' category='jacket' %}?gender=M">Куртки</a></li>
                 <li><a class="dropdown-item" href="{% url 'products' category='shoes' %}?gender=M">Обувь</a></li>
                 <li><a class="dropdown-item" href="{% url 'products'  category='thermal' %}?gender=M">Термобелье</a></li>
@@ -32,7 +35,7 @@
                   <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                       Детям
                   </a>
-                  <ul class="dropdown-menu dropdown-menu-dark">
+                  <ul class="dropdown-menu">
                     <li><a class="dropdown-item" href="{% url 'products' category='jacket' %}?age_type=K">Куртки</a></li>
                     <li><a class="dropdown-item" href="{% url 'products' category='shoes' %}?age_type=K">Обувь</a></li>
                     <li><a class="dropdown-item" href="{% url 'products' category='thermal' %}?age_type=K">Термобелье</a></li>
@@ -41,26 +44,28 @@
           </ul>
         </div>
     </div>
-        <div class="d-flex align-items-center order-2 order-md-3">
+        <div class="d-flex align-items-center flex-row-reverse gap-2 order-2 order-md-3">
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
-      {% if request.user.is_authenticated %}
-        <div class="dropdown-center user__nav">
-          <a 
-            class="btn btn-secondary dropdown-toggle" 
-            href="#" 
-            role="button" data-bs-toggle="dropdown" 
-            aria-expanded="false"
-          >{{ request.user.username }}</a>
-          <ul class="dropdown-menu dropdown-menu-end">
-            <li><a class="dropdown-item" href="#">Корзина</a></li>
-            <li><a  class="dropdown-item" href="{% url 'logout' %}">Выход</a></li>
-          </ul>
-        </div>
-      {% else %}
-        <a class="nav-login" href="{% url 'login' %}">Вход</a>
-      {% endif %}
+          {% if request.user.is_authenticated %}
+            <div class="dropdown-center user__nav">
+              <a
+                class="btn btn-secondary dropdown-toggle" 
+                href="#" 
+                role="button" data-bs-toggle="dropdown" 
+                aria-expanded="false"
+              >
+                {{ request.user.username }}
+              </a>
+              <ul class="dropdown-menu dropdown-menu-end">
+                <li><a class="dropdown-item" href="#">Корзина</a></li>
+                <li><a class="dropdown-item" href="{% url 'logout' %}">Выход</a></li>
+              </ul>
+            </div>
+          {% else %}
+          <a class="nav-login" href="{% url 'login' %}">Вход</a>
+        {% endif %}
       </div>
     </div>  
   </nav>

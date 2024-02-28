@@ -13,13 +13,7 @@
 
     <div class="cards__container">
         <section class="cards__filter">
-            <form method="get">
-                {{ filter_form.as_p }}
-                <input type="submit" class="btn btn-primary" />
-            </form>
-            <form method="get">
-                <button class="btn btn-outline-primary">Отчистить</button>
-            </form>
+            {% include 'include/filter.html' with form=filter_form %}
         </section>
 
         <div>
