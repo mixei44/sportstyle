@@ -1,52 +1,35 @@
 from django.contrib.auth.base_user import BaseUserManager
 
+from .constants import UserErrorMessages as UEM
 
-class UserManager(BaseUserManager):
-    use_in_migrations = True
-
-    def _create_user(self, username=None, email=None,
-                     password=None, **extra_fields):
-        
-        if not username:
-            if not email:
-                raise ValueError('The given email')
-
-        if email:
-            email = self.normalize_email(email)
-
-            if not username:
-                username = email
-
-            user = self.model(
-                email=email,
-                username=username,
-                **extra_fields
-            )
-
-        if extra_fields.get('is_superuser'):
-            user = self.model(
-                username=username,
-                **extra_fields
-            )
-
+class CustomUserManager(BaseUserManager):
+    """
+    Custom user model manager where email is the unique identifiers
+    for authentication instead of usernames.
+    """
+    def create_user(self, email, password, **extra_fields):
+        """
+        Create and save a user with the given email and password.
+        """
+        if not email:
+            raise ValueError(UEM.email_empty)
+        email = self.normalize_email(email)
+        user = self.model(email=email, **extra_fields)
         user.set_password(password)
-        user.save(using=self._db)
+        user.save()
         return user
 
-    def create_user(self, username, email, password=None, **extra_fields):
-        extra_fields.setdefault('is_superuser', False)
-        return self._create_user(username=username, email=email, password=password, **extra_fields)
+    def create_superuser(self, email, password, **extra_fields):
+        """
+        Create and save a SuperUser with the given email and password.
+        """
+        extra_fields.setdefault("is_staff", True)
+        extra_fields.setdefault("is_superuser", True)
+        extra_fields.setdefault("is_active", True)
+        extra_fields.setdefault("email_verified", True)
 
-    def create_superuser(self, username, password, **extra_fields):
-        extra_fields.setdefault('is_superuser', True)
-        extra_fields.setdefault('is_staff', True)
-        extra_fields.setdefault('is_active', True)
-
-        if extra_fields.get('is_superuser') is not True:
-            raise ValueError('Superuser must have is_superuser=True.')
-
-        return self._create_user(
-            username=username,
-            password=password,
-            **extra_fields
-        )
+        if extra_fields.get("is_staff") is not True:
+            raise ValueError("Superuser must have is_staff=True.")
+        if extra_fields.get("is_superuser") is not True:
+            raise ValueError("Superuser must have is_superuser=True.")
+        return self.create_user(email, password, **extra_fields)

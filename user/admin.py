@@ -1,26 +1,23 @@
 from django.contrib import admin
-from django.contrib.auth.admin import UserAdmin
+from django.contrib.auth.admin import UserAdmin as DjangoUserAdmin
 
-from .models import User
+from .models import CustomUser
 
 
-class CustomUserAdmin(UserAdmin):
+@admin.register(CustomUser)
+class UserAdmin(DjangoUserAdmin):
     fieldsets = (
-        (None, {'fields': ('username', 'email', 'email_verify','password')}),
-        ('Права', {'fields': ('is_active', 'is_staff', 'is_superuser',
+        (None, {'fields': ('email', 'password', 'email_verified')}),
+        ('Permissions', {'fields': ('is_active', 'is_staff', 'is_superuser',
                                        'groups', 'user_permissions')}),
-        ('Важные даты', {'fields': ('last_login', 'date_joined', 'date_sent_mail')}),
+        ('Important dates', {'fields': ('last_login', 'date_joined')}),
     )
     add_fieldsets = (
         (None, {
             'classes': ('wide',),
-            'fields': ('username', 'email', 'email_verify', 'password1', 'password2'),
+            'fields': ('email', 'password1', 'password2'),
         }),
     )
-    readonly_fields = ('date_sent_mail', )
-    list_display = ('username', 'email', 'email_verify')
+    list_display = ('email', 'email_verified', 'is_staff')
     search_fields = ('email', )
     ordering = ('email',)
-   
- 
-admin.site.register(User, CustomUserAdmin)

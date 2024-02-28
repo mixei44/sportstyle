@@ -1,32 +1,28 @@
 from django.contrib.auth.models import AbstractUser
 from django.db import models
 
-from user.managers import UserManager
+from .managers import CustomUserManager
 
 
-class User(AbstractUser):
-    username = models.CharField('username', 
-                                help_text="Обязательно. До 150 символов. Буквы, цифры и -/_/. только.",
-                                max_length=72, 
-                                unique=True, 
-                                error_messages={'unique': 'Пользователь с таким именем уже существует.'})
-    email = models.EmailField('email', unique=True, max_length=72, error_messages={'unique': "Эта почта занята."})
-    email_verify = models.BooleanField(default=False, verbose_name="Email подтвержден")
-    date_sent_mail = models.DateTimeField("Время отправки последнего подтверждающего письма", auto_now=True, auto_now_add=False)
-
+class CustomUser(AbstractUser):
+    username = None
+    email = models.EmailField("Email", unique=True)
+    email_verified = models.BooleanField("E-mail verified", default=False)
+    password = models.CharField("Password", max_length=128)
+    
     first_name = None
     last_name = None
+    
+    
+    USERNAME_FIELD = "email"
+    EMAIL_FIELD = "email"
+    REQUIRED_FIELDS = []
 
-    objects = UserManager()
-
-    USERNAME_FIELD = 'username'
-    REQUIRED_FIELDS = ['email']
+    objects = CustomUserManager()
 
     def __str__(self):
-        return self.username
-
+        return self.email
 
     class Meta:
-        verbose_name = 'Пользователь'
-        verbose_name_plural = 'Пользователи'
-        unique_together = ('username', 'email')
+        verbose_name = 'user'
+        verbose_name_plural = 'users'

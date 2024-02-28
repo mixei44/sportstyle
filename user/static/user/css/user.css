@@ -1,0 +1,9 @@
+.user__card {
+    max-width: 282px;
+    width: 282px;
+    min-width: 222px;
+}
+
+.mb-n {
+    margin-bottom: -0.25rem;
+}
