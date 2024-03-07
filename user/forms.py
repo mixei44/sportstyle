@@ -42,8 +42,8 @@ class LoginForm(forms.Form):
     }
 
     email = forms.EmailField(label='Email')
-    password = forms.CharField(label="Password", min_length=8, max_length=128)
-    remember_me = forms.BooleanField(label="Remember me 30 days", required=False)
+    password = forms.CharField(label="Пароль", min_length=8, max_length=128)
+    remember_me = forms.BooleanField(label="Помни меня 30 дней", required=False)
 
     def send_verification_email(self, request: HttpRequest, user):
         # You can add validation here

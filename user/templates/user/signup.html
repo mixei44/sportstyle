@@ -5,13 +5,13 @@
 {% block link %}
     <link rel="stylesheet" href="{% static 'user/css/user.css' %}">
 {% endblock %}
-{% block title %}Sign up{% endblock %}
+{% block title %}Зарегистрироваться{% endblock %}
 
 {% block content %}
     <div class="container d-flex justify-content-center">
         <div class="card text-center text-bg-dark border-primary border-3 mt-4 user__card" data-bs-theme="dark">
             <h2 class="card-header">
-                Signup
+                Зарегистрироваться
             </h2>
             <form action="{% url 'signup' %}" method="post" id="signupForm">{% csrf_token %}
                 <div class="card-body">
@@ -76,8 +76,8 @@
                 </div>
                 
                 <div class="card-footer d-flex flex-column gap-2">
-                    <button type="submit" class="btn btn-primary" id="signupSubmit">Sign up</button>
-                    <a href="{% url 'login' %}" class="card-link">I already have an account</a>
+                    <button type="submit" class="btn btn-primary" id="signupSubmit">Зарегистрироваться</button>
+                    <a href="{% url 'login' %}" class="card-link">У меня уже есть аккаунт</a>
                 </div>
             </form>
         </div>

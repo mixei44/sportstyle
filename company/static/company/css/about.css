@@ -1,355 +1,40 @@
-:root {
-    --white: #ffffff;
-}
-
-/* о нас */
-.about__title__header p {
-    font-size: 20px;
-}
-.about__title__header{
-    text-align: center;
-    color: #333;
-}
-/* С чего наченалось  */
-.about__container{
-    display: flex;
-    -webkit-box-pack: justify;
-    justify-content: space-between;
-    -webkit-box-align: center;
-    align-items: center;
-    
-}
-.about__title h2{
-    font-size: 30px;
-    font-weight: 500;
-    line-height: 1.33;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    color: #000;
-    margin-bottom: 17px;
-}
-
-.about__title p{
-    font-size: 16px;
-    line-height: 1.5;
-    letter-spacing: normal;
-    color: #333;
-    max-width: 560px;
-
-}
-
-/* Наша мисия  */
-
-.about__container_2{
-    position: relative;
-    display: flex;
-    -webkit-box-pack: end;
-    -ms-flex-pack: end;
-    justify-content: flex-end;
-}
-    
-
-.about__container__1{
-    position: relative;
-    display: flex;
-    -webkit-box-pack: end;
-
-}
-
-.about__block{
+.mission-text {
     position: absolute;
-    padding: 35px;
-    width: 600px;
-    left: 0;
-    color: #fff;
-    background-color: #212529;
+    width: 50%;
 }
 
-.about__block__h2{
-    font-size: 30px;
-    font-weight: 500;
-    line-height: 1.33;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    color: #fff;
-}
-
-.about__block__f{
-    display: flex;
-    -webkit-box-align: center;
-    align-items: center;
-    margin-top: 32px;
-}
-
-.about__block__f span{
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 1.5;
-    letter-spacing: normal;
-    color: #fff;
-
-}
-
-/* Наши проекты  */
-.about__head{
-    display: flex;
-    -webkit-box-align: center;
-    align-items: center;
-    margin-bottom: 29px;
-}
-
-.about__container_3{
-    display: flex;
-    flex-wrap: nowrap;
-    width: 100%;
-    -webkit-box-pack: justify;
-    justify-content: space-between;
-}
-
-.about__link__over{
-    color: #fff;
-    font-size: 20px;
+.brands-photo{
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.3);
-    display: flex;
-    -webkit-box-align: center;
-    align-items: center;
-    -webkit-box-pack: center;
-    justify-content: center;
-    transition: 0.3s;
-
-}
-
-.about__link{
-    width: 32.6%;
-    position: relative;
-    overflow: hidden;
-}
-
-.wrapper {
-    display: none;
-}
-
-/* все бренды */
-.about__container_4 img {
-    width: 1150px;
-    object-fit: cover;
-}
-
-.about__container_4{
-    margin-bottom: 30px;
-    position: relative;
-    vertical-align: middle;
-}
-
-.about__block-link img {
-    width: 600px;
-    object-fit: cover;
-}
-
-.about__block-link{
-    position: absolute;
-    top: -1px;
-    right: 0;
-}
-
-@media (max-width: 1182px) {
-    div.about__title h2 {  
-        font-size: 25px;
-        letter-spacing: 3px;
-        color: #000;
-        margin-bottom: 17px;
-    }
-
-    div.about__title p {
-        font-size: 17px;
-        max-width: 392px;
-    }
-
-    div.about__block {
-        padding: 20px;
-        width: 546px;
-    }
-
-    div.about__block-link img {
-        width: 510px;
-    }
-
-}
-
-
-@media (max-width: 1160px) {
-    section.about__container{
-        justify-content: space-evenly;
-
-    }
-    
-    div.about__title img {
-        width: 600px;
-    }
-
-
-    div.about__container_2 img {
-        width: 1093px;
-    }
-
-    div.about__block {
-        padding: 4px;
-        width: 500px;
-    }
-
-    div.about__container_3 {
-        width: 96%;
-    }
-
-    div.about__container_4 img{
-        width: 1093px;
-    }
-
-    div.about__block-link {
-        right: 43px;
-    }
-
-    div.about__block-link img {
-        width: 470px;
-    }
+    width: 50%;
     
 }
 
-@media (max-width: 1116px) {
-    section.about__title__header p {
-        font-size: 17px;
+@media (max-width: 785px) {
+    .mission-text {
+        position: static;
+        width: 100%;
     }
 
-    div.about__title img {
-        width: 566px;
-    }
-
-    div.about__container_2 img {
-        width: 1048px;
-    }
-    
-    div.about__container_4 img {
-        width: 1048px;
-    }
-
-    div.about__block-link img {
-        width: 411px;
-    }
-    
-}
-
-@media (max-width: 1056px) {
-    div.about__title img {
-        width: 512px;
-    }
-
-    div.about__container_2 img {
-        width: 990px;
-    }
-    
-    div.about__container_4 img {
-     width: 990px; 
-    }
-
-    div.about__block-link img {
-        width: 411px;
-    }
-
-}
-@media (max-width: 1000px) {
-    div.about__title img {
-        width: 493px;
-    }
-
-    h2.about__block__h2 {
-        font-size: 22px;
-    }
-
-    div.about__block {
-        padding: 5px;
-        width: 500px;
-    }
-
-    div.about__block__f {
-        margin-top: 6px;
-    }
-
-    div.about__container_2 img {
-        width: 950px;
-    }
-
-    div.about__container_3 {
-        width: 97%;
-    }
-
-    div.about__container_4 img {
-        width: 950px;
-    }
-
-    div.about__block-link img {
-        width: 411px;
-    }
-
-}
-
-@media (max-width: 990px) {
-    section.about__container {
-        display: flex;
-        -webkit-box-pack: justify;
-        justify-content: space-between;
-        -webkit-box-align: center;
-        align-items: center;
-        flex-direction: column-reverse;
-    }
-
-    div.about__container_2 img {
-        width: 950px;
-        height: 460px;
-    }
-
-    div.about__block {
-        padding: 5px;
-        width: 440px;
-    }
-
-    h2.about__block__h2 {
-        font-size: 20px;
-    }
-
-    p.about__block__p{
-        font-size: 17px;
-    }
-
-
-    div.about__block__f P {
-        font-size: 18px;
-    }
-
-    section.about__container__2 {
+    .mission-photo {
         display: none;
     }
 
-    div.wrapper {
-        text-align: center;
-        display: block;
+    .projects-wrapper {
+        max-width: calc(100vw - calc(var(--bs-gutter-x)));
+        overflow-x: scroll;
     }
 
-    div.about__container_4 img {
-        width: 950px;
-        height: 400px;
+    .projects a {
+        min-width: 270px;
+        min-height: 270px;
     }
 
-    div.about__block-link {
-        right: 16px;
+    .fon-photo{
+        display: none;
     }
 
-    div.about__block-link img {
-        width: 411px;
-        height: auto;
+    .brands-photo{
+        position: static;
+        width: 100%;
     }
 }
